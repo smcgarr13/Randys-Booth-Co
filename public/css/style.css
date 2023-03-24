@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  body {
+    background-color: floralwhite;
+  }
+
+  .root {
+    font-family: "Open Sans" sans-serif;
+    font-size: 15px;
+    color: #DF6301;
+    color: #212121;
+    color: floralwhite;
+  }
+
+--------------------------------------------------------------
+  
+/* projects */
+  h1 {
+    padding: 6px 0px;
+    width: 100%;
+    height: 40px;
+    text-decoration: none;
+    margin: 0;
+    background-color: #DF6301;
+    color: #212121;
+  }
+
+  /* header and navbar style info */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0 0 30px;
+    background-color: floralwhite;
+    color: #fd7e14;
+  }
+  
+  header nav {
+    /* display: absolute; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  header nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    height: 135px;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav li {
+    list-style-type: none;
+    margin-right: 75px; /* add some spacing between items */
+    display: inline-block;
+  }
+
+  a {
+    text-decoration: none;
+    color: #212121;
+  }
+
+  .project-container {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 22.5%;
+    height: 300px;
+    background-color: #ccc;
+    color: floralwhite;
+  }
+
+  ul.list-group {
+    margin-top: 20px;
+    align-items: flex-start;
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  .project-container h1 {
+    padding: 0px;
+    width: 22.5%;
+    height: 40px;
+    text-decoration: none;
+    text-align: center;
+    margin: 0;
+    background-color: #DF6301;
+    color: #212121;
+  }
+
+  .orange-line {
+    border-bottom: 2px solid #DF6301;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .black-line {
+    border-bottom: 4px solid #212121;
+    width: 100%;
+    margin-top: 5px;
+  }
+
+  --------------------------------------------------------------
+
+/* log-in prompt */
+  .container-login {
+    background-color: #DF6301;
+    color: floralwhite;
+  }
+
+  h3 {
+    font-size: 15px;
+    height: 100px;
+    padding-top: 50px;
+    text-align: center;
+  }
+
+.container-login {
+  background-color: #DF6301;
+  color: floralwhite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+  .form-control {
+    margin: 15px 0px 15px 0px;
+    width: 100%;
+    background-color: floralwhite;
+    border: none;
+    align-items: center;
+  }
+
+  button {
+    background-color: #DF6301;
+    border: 1px solid floralwhite;
+    border-radius: 20px;
+    color:floralwhite;
+    width: 200px;
+    padding: 6px;
+    margin: 20px 0px 60px 0px;
+    align-items: center;
+  }
+  
+  #sign-up-button {
+    margin: 100px 0px 60px 0px;
+  }
