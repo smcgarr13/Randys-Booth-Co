@@ -1,0 +1,80 @@
+{{!-- 
+{{> header}}
+
+    <div id="inventory-card-container">
+      {{#each inventoryData}}
+      <div class="container">
+        <h2>{{this.item_name}}</h2>
+        <p>Price: {{this.price}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <p>Category: {{this.category_name}}</p>
+      </div>
+      {{/each}}
+    </div>
+
+{{> footer}} --}}
+
+{{> header}}
+<div id="inventory-container">
+              <div class="row justify-content-start">
+                <div class="container">
+                  <ul class="list-group" style="list-style-type: none;" id="inventory-details">
+                  <li id="item-name">Item Name: </li>
+                  <li id="item-price">Item Price: </li>
+                  <li id="total-quantity">Total Quantity: </li>
+                  <li id="available-quantity">Available Quantity: </li>
+                  <li id="category-name">Category Name: </li>
+                </ul>
+                </div>
+              </div>
+
+              <div class="row justify-content-start">
+                <div class="container">
+                  <ul class="list-group" style="list-style-type: none;" id="inventory-details">
+                  <li id="item-name">Item Name: </li>
+                  <li id="item-price">Item Price: </li>
+                  <li id="total-quantity">Total Quantity: </li>
+                  <li id="available-quantity">Available Quantity: </li>
+                  <li id="category-name">Category Name: </li>
+                </ul>
+                </div>
+              </div>
+
+              <div class="row justify-content-start">
+                <div class="container">
+                  <ul class="list-group" style="list-style-type: none;" id="inventory-details">
+                  <li id="item-name">Item Name: </li>
+                  <li id="item-price">Item Price: </li>
+                  <li id="total-quantity">Total Quantity: </li>
+                  <li id="available-quantity">Available Quantity: </li>
+                  <li id="category-name">Category Name: </li>
+                </ul>
+                </div>
+              </div>
+
+              <div class="row justify-content-start">
+                <div class="container">
+                  <ul class="list-group" style="list-style-type: none;" id="inventory-details">
+                  <li id="item-name">Item Name: </li>
+                  <li id="item-price">Item Price: </li>
+                  <li id="total-quantity">Total Quantity: </li>
+                  <li id="available-quantity">Available Quantity: </li>
+                  <li id="category-name">Category Name: </li>
+                </ul>
+                </div>
+              </div>
+
+  </div>
+{{> footer}}
+
+
+    {{!-- <ul>
+      {{#each inventoryData}}
+      <li>
+        <h2>{{this.product_name}}</h2>
+        <p>Price: {{this.price}}</p>
+        <p>Stock: {{this.stock}}</p>
+        <p>Category: {{this.category_name}}</p>
+      </li>
+      {{/each}}
+    </ul> --}}
