@@ -1,0 +1,198 @@
+[
+  {
+    "item_name": "¾” CDX Plywood",
+    "item-price": 1.00,
+    "stock": 10,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_name": "¾” Sanded Plywood",
+    "item-price": 3.00,
+    "stock": 13,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_name": "7/16 OSB",
+    "item-price": 5.00,
+    "stock": 18,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_name": "¼” OSB",
+    "item-price": 7.00,
+    "stock": 20,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_name": "Special",
+    "item-price": 8.00,
+    "stock": 14,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_name": "1 inch Poplar (Framing Lumber)",
+    "item-price": 3.00,
+    "stock": 25,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_name": "4/4 Maple",
+    "item-price": 5.00,
+    "stock": 15,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_name": "4/4 Walnut",
+    "item-price": 7.00,
+    "stock": 20,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_name": "4/4 White Oak",
+    "item-price": 8.00,
+    "stock": 5,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_name": "4/4 Red Oak",
+    "item-price": 10.00,
+    "stock": 15,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_name": "4/4 Ash",
+    "item-price": 13.00,
+    "stock": 8,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_name": "4/4 European Beech",
+    "item-price": 14.00,
+    "stock": 25,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_name": "Special",
+    "item-price": 15.00,
+    "stock": 0,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_name": "Plain Sliced White Oak",
+    "item-price": 2.00,
+    "stock": 12,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Plain Sliced Red Oak",
+    "item-price": 5.00,
+    "stock": 15,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Rift White Oak",
+    "item-price": 8.00,
+    "stock": 13,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Rift Red Oak",
+    "item-price": 10.00,
+    "stock": 18,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Maple",
+    "item-price": 13.00,
+    "stock": 8,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Beech",
+    "item-price": 15.00,
+    "stock": 7,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Walnut",
+    "item-price": 16.00,
+    "stock": 17,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Ash",
+    "item-price": 18.00,
+    "stock": 9,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Special",
+    "item-price": 20.00,
+    "stock": 0,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_name": "Back Foam – 2-inch",
+    "item-price": 3.00,
+    "stock": 28,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_name": "Back Foam – 3-inch",
+    "item-price": 4.00,
+    "stock": 20,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_name": "Back Foam – 4-inch",
+    "item-price": 5.00,
+    "stock": 15,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_name": "Seat Foam – 3-inch",
+    "item-price": 4.00,
+    "stock": 16,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_name": "Seat Foam – 4-inch",
+    "item-price": 5.00,
+    "stock": 22,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_name": "Seat Foam – 5-inch",
+    "item-price": 6.00,
+    "stock": 12,
+    "category_id": 4,
+    "category_name": "Foam"
+  }
+]
