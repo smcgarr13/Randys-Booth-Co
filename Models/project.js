@@ -1,19 +1,19 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class Order extends Model {}
+class Project extends Model {}
 
-Order.init(
+Project.init(
   {
     project_num: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       references: {
         model: 'quote',
         key: 'quote_num',
       },
       primaryKey:true,
     },
-    order_name:{
+    Project_name:{
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -37,24 +37,15 @@ Order.init(
       defaultValue:"TBD", 
     },
     project_description:{
-      // type: DataTypes.ARRAY(DataTypes.STRING)
       type: DataTypes.ARRAY(DataTypes.STRING)
-    },
-    
-    quote_id:{
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'quote',
-        key: 'quote_num',
-      },
     },
   },
   {
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Order',
+    modelName: 'Project',
   }
 );
 
-module.exports = Order;
+module.exports = Project;
