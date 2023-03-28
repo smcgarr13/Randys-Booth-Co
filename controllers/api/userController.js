@@ -9,6 +9,7 @@ exports.getLoginPage = ('/login', (req, res) => {
     return;
   }
   // Otherwise, render the 'login' template
+  // need to update github
   res.render('login');
 });
 
