@@ -45,12 +45,14 @@ Inventory.init(
         key: 'id',
       },
     },
-    //   project_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //   model: 'project',
-    //   key: 'id',
-    // },
+        project_num: {
+        type: DataTypes.INTEGER,
+        references: {
+        model: 'quote',
+        key: 'quote_num',
+      },
+        primaryKey:true,
+    },
   }, 
     {
     sequelize,
