@@ -9,6 +9,7 @@ ProjectTeam.init(
         type:DataTypes.INTEGER,
         autoIncrement: true,
         allowNull: false,
+        primaryKey: true,
     },
     project_num: {
       type: DataTypes.INTEGER,
