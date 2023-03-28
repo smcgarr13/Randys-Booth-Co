@@ -6,6 +6,8 @@ const withAuth = require('../utils/auth');
 router.get('/:num/requests', requestController.getRequests);
 router.get('/:num/:id', withAuth, requestController.getSingleRequests);
 router.post('/:num', requestController.createRequest);
+router.put('/num:/:id',requestController.updateRequest);
+router.delete('/:num/:id', requestController.deleteRequest);
 // router.get('/painting/:id', withAuth, paintingController.getSinglePainting);
 
 module.exports = router;

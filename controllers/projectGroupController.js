@@ -92,3 +92,19 @@ exports.getTeam = async (req, res) => {
       res.status(500).json(err);
     }
   };
+  exports.deleteGroup = async (req, res) => {
+    try {
+      const Group = await ProjectTeam.destroy({
+        where: {
+          project_num: id
+        }
+      });
+      if (!Group) {
+        return res.status(404).json({ error: 'Group item not found' });
+      }
+      res.status(200).json({ message: 'Group item deleted successfully' });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  };

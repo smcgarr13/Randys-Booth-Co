@@ -96,10 +96,26 @@ exports.updateProject = async (req, res) => {
     try {
       const project = await Project.update(req.body, {
         where: {
-          id: req.params.id
+          project_num: id
         }
       });
       res.status(200).json(project);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  };
+  exports.deleteProject = async (req, res) => {
+    try {
+      const project = await Project.destroy({
+        where: {
+          project_num: id
+        }
+      });
+      if (!project) {
+        return res.status(404).json({ error: 'Project item not found' });
+      }
+      res.status(200).json({ message: 'Project item deleted successfully' });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
