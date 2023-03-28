@@ -1,20 +1,34 @@
+// Import required dependencies and modules
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
-const routes = require('./controllers');
-// const mime = require('mime');
-// const helpers = require('./utils/helpers');
-
+const handlebars = require('handlebars');
+// const routes = require('./controllers');
+const Category = require('./Models/category-model');
+const Inventory = require('./Models/inventory-model');
+const homeRoutes = require('./routes/homeRoutes');
+const apiRoutes = require('./routes/api');
+const viewRoutes = require('./routes/api/viewRoutes'); 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+// const helpers = require('./utils/helpers');
 
+// Initialize Express app
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
-const hbs = exphbs.create({});
+// Configure Handlebars.js template engine
+const hbs = exphbs.create({
+  handlebars: handlebars,
+  defaultLayout: 'main',
+  runtimeOptions: {
+    allowProtoPropertiesByDefault: true,
+    allowProtoMethodsByDefault: true,
+  },
+});
 
+// Configure session middleware
 const sess = {
   secret: 'Super secret secret',
   cookie: {
@@ -30,79 +44,28 @@ const sess = {
   })
 };
 
-app.use(session(sess));
 
-// Inform Express.js on which template engine to use
+// Set up Handlebars as the view engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
+// Apply session middleware to the app
+app.use(session(sess));
+
+// Apply body-parsing middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+// Set up application routes
+app.use('/api', apiRoutes);
+app.use('/', homeRoutes);
+app.use('/', viewRoutes); 
+// app.use(routes);
 
+// Sync Sequelize models and start the server
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // log-in and sign-up
-// const express = require('express');
-// const exphbs = require('express-handlebars');
-// const app = express();
-// const { Sequelize } = require('sequelize');
-
-// // Import routes
-// const inventoryRoutes = require('/Users/mchong/bootcamp/projects/Randys-Booth-Co/routes/api/inventory-routes');
-
-// // Use routes
-// app.use('/api', inventoryRoutes);
-
-//   // Start the server
-//   app.listen(3001, function () {
-//     console.log('App listening on port 3001!');
-//   });
-
-
-
-
-
-  // // Set up Handlebars view engine
-// app.engine('handlebars', exphbs());
-// app.set('view engine', 'handlebars');
-
-// // Define a route
-// app.get('/', function (req, res) {
-//     res.render('home', {title: 'Home'});
-//   });
-  
-   
-// --------------------------------------------
-// inventory
-
-// const { Inventory } = require('./Models/inventory-models.js');
-
-// app.get('/inventory', async (req, res) => {
-//   try {
-//     const inventoryData = await Inventory.findAll();
-//     res.render('inventory', { inventoryData });
-//   } catch (err) {
-//     console.error(err);
-//     res.status(500).json({ message: 'Internal server error' });
-//   }
-// });
