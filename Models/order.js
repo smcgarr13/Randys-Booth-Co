@@ -40,14 +40,10 @@ Order.init(
       // type: DataTypes.ARRAY(DataTypes.STRING)
       type: DataTypes.ARRAY(DataTypes.STRING)
     },
-    
-    quote_id:{
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'quote',
-        key: 'quote_num',
-      },
-    },
+    employee_group:{
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,

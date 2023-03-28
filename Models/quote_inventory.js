@@ -5,10 +5,23 @@ class Inventory_Quote extends Model {}
 
 Inventory_Quote.init(
   {
+
+// 
+    list_id:{
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
+        primaryKey:true,
+    },
+    // Identifiers for elements in model
     qInventory_num:{
         type:DataTypes.INTEGER,
         allowNull:false,
-        primaryKey: true,
+        reference:{
+            references: {
+                model: 'quote',
+                key: 'quote_num',
+              },
+        }
     },
     inventory_num:{
         type:DataTypes.INTEGER,
@@ -20,6 +33,9 @@ Inventory_Quote.init(
     },
     item_description:{
         type:DataTypes.STRING,
+    },
+    item_code:{
+        type: DataTypes.INTEGER,
     },
     unit_price:{
         type: DataTypes.INTEGER,
