@@ -6,6 +6,7 @@ const withAuth = require('../utils/auth');
 router.get('/:num/team', groupController.getTeam);
 router.get('/:num/:id', withAuth,groupController.getSingleTeam);
 router.post('/:num', groupController.createTeam);
+router.put('/num:/team',groupController.updateGroup);
 // router.get('/painting/:id', withAuth, paintingController.getSinglePainting);
 
 module.exports = router;
