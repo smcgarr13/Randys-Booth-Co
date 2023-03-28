@@ -39,6 +39,10 @@ Project.init(
     project_description:{
       type: DataTypes.ARRAY(DataTypes.STRING)
     },
+    complete:{
+      type:DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
   },
   {
     sequelize,
