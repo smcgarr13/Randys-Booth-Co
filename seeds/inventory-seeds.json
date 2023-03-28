@@ -1,0 +1,282 @@
+[
+  {
+    "item_id": "A1",
+    "item_name": "¾” CDX Plywood",
+    "item_number": "A1",
+    "unit_cost": 1.00, 
+    "quantity_instock": 10,
+    "available_quantity": 7,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_id": "A2",
+    "item_name": "¾” Sanded Plywood",
+    "item_number": "A2",
+    "unit_cost": 3.00,
+    "quantity_instock": 13,
+    "available_quantity": 8,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_id": "A3",
+    "item_name": "7/16 OSB",
+    "item_number": "A3",
+    "unit_cost": 5.00,
+    "quantity_instock": 18,
+    "available_quantity": 5,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_id": "A4",
+    "item_name": "¼” OSB",
+    "item_number": "A4",
+    "unit_cost": 7.00,
+    "quantity_instock": 20,
+    "available_quantity": 3,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_id": "A5",
+    "item_name": "Special",
+    "item_number": "A5",
+    "unit_cost": 8.00,
+    "quantity_instock": 14,
+    "available_quantity": 0,
+    "category_id": 1,
+    "category_name": "Sheet Goods"
+  },
+  {
+    "item_id": "B1",
+    "item_name": "1 inch Poplar (Framing Lumber)",
+    "item_number": "B1",
+    "unit_cost": 3.00,
+    "quantity_instock": 25,
+    "available_quantity": 20,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_id": "B2",
+    "item_name": "4/4 Maple",
+    "item_number": "B2",
+    "unit_cost": 5.00,
+    "quantity_instock": 15,
+    "available_quantity": 5,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_id": "B3",
+    "item_name": "4/4 Walnut",
+    "item_number": "B3",
+    "unit_cost": 7.00,
+    "quantity_instock": 20,
+    "available_quantity": 17,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_id": "B4",
+    "item_name": "4/4 White Oak",
+    "item_number": "B4",
+    "unit_cost": 8.00,
+    "quantity_instock": 5,
+    "available_quantity": 2,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_id": "B5",
+    "item_name": "4/4 Red Oak",
+    "item_number": "B5",
+    "unit_cost": 10.00,
+    "quantity_instock": 15,
+    "available_quantity": 7,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_id": "B6",
+    "item_name": "4/4 Ash",
+    "item_number": "B6",
+    "unit_cost": 13.00,
+    "quantity_instock": 8,
+    "available_quantity": 3,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_id": "B7",
+    "item_name": "4/4 European Beech",
+    "item_number": "B7",
+    "unit_cost": 14.00,
+    "quantity_instock": 25,
+    "available_quantity": 13,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_id": "B8",
+    "item_name": "Special",
+    "item_number": "B8",
+    "unit_cost": 15.00,
+    "quantity_instock": 0,
+    "available_quantity": 0,
+    "category_id": 2,
+    "category_name": "Hardwood"
+  },
+  {
+    "item_id": "C1",
+    "item_name": "Plain Sliced White Oak",
+    "item_number": "C1",
+    "unit_cost": 2.00,
+    "quantity_instock": 12,
+    "available_quantity": 6,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "C2",
+    "item_name": "Plain Sliced Red Oak",
+    "item_number": "C2",
+    "unit_cost": 5.00,
+    "quantity_instock": 15,
+    "available_quantity": 8,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "C3",
+    "item_name": "Rift White Oak",
+    "item_number": "C3",
+    "unit_cost": 8.00,
+    "quantity_instock": 13,
+    "available_quantity": 8,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "C4",
+    "item_name": "Rift Red Oak",
+    "item_number": "C4",
+    "unit_cost": 10.00,
+    "quantity_instock": 18,
+    "available_quantity": 13,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "C5",
+    "item_name": "Maple",
+    "item_number": "C5",
+    "unit_cost": 13.00,
+    "quantity_instock": 8,
+    "available_quantity": 5,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "C6",
+    "item_name": "Beech",
+    "item_number": "C6",
+    "unit_cost": 15.00,
+    "quantity_instock": 7,
+    "available_quantity": 2,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "C7",
+    "item_name": "Walnut",
+    "item_number": "C7",
+    "unit_cost": 16.00,
+    "quantity_instock": 17,
+    "available_quantity": 7,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "C8",
+    "item_name": "Ash",
+    "item_number": "C8",
+    "unit_cost": 18.00,
+    "quantity_instock": 9,
+    "available_quantity": 3,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "C9",
+    "item_name": "Special",
+    "item_number": "C9",
+    "unit_cost": 20.00,
+    "quantity_instock": 0,
+    "available_quantity": 0,
+    "category_id": 3,
+    "category_name": "Veneer"
+  },
+  {
+    "item_id": "D1",
+    "item_name": "Back Foam – 2-inch",
+    "item_number": "D1",
+    "unit_cost": 3.00,
+    "quantity_instock": 28,
+    "available_quantity": 23,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_id": "D2",
+    "item_name": "Back Foam – 3-inch",
+    "item_number": "D2",
+    "unit_cost": 4.00,
+    "quantity_instock": 20,
+    "available_quantity": 13,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_id": "D3",
+    "item_name": "Back Foam – 4-inch",
+    "item_number": "D3",
+    "unit_cost": 5.00,
+    "quantity_instock": 15,
+    "available_quantity": 10,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_id": "D4",
+    "item_name": "Seat Foam – 3-inch",
+    "item_number": "D4",
+    "unit_cost": 4.00,
+    "quantity_instock": 16,
+    "available_quantity": 6,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_id": "D5",
+    "item_name": "Seat Foam – 4-inch",
+    "item_number": "D5",
+    "unit_cost": 5.00,
+    "quantity_instock": 22,
+    "available_quantity": 5,
+    "category_id": 4,
+    "category_name": "Foam"
+  },
+  {
+    "item_id": "D6",
+    "item_name": "Seat Foam – 5-inch",
+    "item_number": "D6",
+    "unit_cost": 6.00,
+    "quantity_instock": 12,
+    "available_quantity": 4,
+    "category_id": 4,
+    "category_name": "Foam"
+  }
+]

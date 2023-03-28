@@ -1,0 +1,19 @@
+[
+    {
+      "id": 1,
+      "category_name": "Sheet Goods"
+    },
+    {
+      "id": 2,
+      "category_name": "Hardwood"
+    },
+    {
+      "id": 3,
+      "category_name": "Veneer"
+    },
+    {
+      "id": 4,
+      "category_name": "Foam"
+    }
+    
+  ]

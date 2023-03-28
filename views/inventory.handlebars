@@ -1,0 +1,22 @@
+{{> header}}
+
+<div id="inventory-container">
+   <div class="row">
+  {{#each inventory}}
+    <div class="card"> 
+      <div class="container">
+        <ul class="list-group" style="list-style-type: none;" class="inventory-details">
+          <li class="item-name">Item Name: {{item_name}}</li>
+          <li class="item-number">Item Number: {{item_number}}</li>
+          <li class="unit-cost">Item Price: ${{unit_cost}}</li>
+          <li class="quantity_instock">Quantity Instock: {{quantity_instock}}</li>
+          <li class="available-quantity">Available Quantity: {{available_quantity}}</li>
+          <li class="category-name">Category Name: {{category.category_name}}</li>
+        </ul>
+      </div>
+    </div>
+  {{/each}}
+  </div>
+</div>
+
+{{> footer}}
