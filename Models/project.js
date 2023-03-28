@@ -12,6 +12,7 @@ Project.init(
         key: 'quote_num',
       },
       primaryKey:true,
+      allowNull: false,
     },
     Project_name:{
       type: DataTypes.STRING,
@@ -26,7 +27,6 @@ Project.init(
     },
     ship_address:{
         type: DataTypes.STRING,
-        allowNull: false,
     },
     starting_date: {
       type: DataTypes.DATE,
