@@ -1,9 +1,12 @@
+// Import required dependencies and modules
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
-// const Project = require('./project');
+const Category = require('./category-model');
 
+// Define the Inventory model, extending Sequelize's Model class
 class Inventory extends Model {}
 
+// Initialize the Inventory model with its attributes and options
 Inventory.init(
     {
       id: {
@@ -16,11 +19,15 @@ Inventory.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-      item_cost: {
+      item_number: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-      total_quantity: {
+      unit_cost: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+      quantity_instock: {
       type: DataTypes.INTEGER,
       allowNull: false,
       defaultValue: 0,
@@ -30,26 +37,23 @@ Inventory.init(
       allowNull: false,
       defaultValue: 0,
     },
-    //   project_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //   model: 'project',
-    //   key: 'id',
-    // },
+      category_id: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      references: {
+        model: 'category',
+        key: 'id',
+      },
+    },
+        project_num: {
+        type: DataTypes.INTEGER,
+        references: {
+        model: 'quote',
+        key: 'quote_num',
+      },
+        primaryKey:true,
+    },
   }, 
-  
-  //     created_at: {
-    //     type: DataTypes.DATE,
-    //     allowNull: false,
-    //     defaultValue: DataTypes.NOW,
-    //   },
-    //   updated_at: {
-    //     type: DataTypes.DATE,
-    //     allowNull: false,
-    //     defaultValue: DataTypes.NOW,
-    //   },
-
-// },
     {
     sequelize,
     freezeTableName: true,
@@ -58,6 +62,13 @@ Inventory.init(
     }
 );
 
+// Define the association between Inventory and Category models
+Inventory.belongsTo(Category, {
+  foreignKey: 'category_id',
+  as: 'category',
+});
+
+// Export the Inventory model for use in other modules
 module.exports = Inventory;
 
 
