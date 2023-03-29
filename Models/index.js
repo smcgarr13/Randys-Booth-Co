@@ -5,6 +5,9 @@ const Project = require('./project');
 const ProjectTeam  = require('./project_group');
 const Request = require('./request');
 const RequestList = require('./request_list');
+const Employee = require('./employee')
+
+
 
 // Define Belongs for Project
 ProjectTeam.belongsTo(Project, {
@@ -41,4 +44,4 @@ Category.hasMany(Inventory, {
 });
 
 // Export both models as part of a single object for easier import elsewhere
-module.exports = { Inventory, Category,Project,ProjectTeam,Request,RequestList };
+module.exports = { Inventory, Category,Project,ProjectTeam,Request,RequestList, Employee };
