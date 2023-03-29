@@ -7,27 +7,27 @@ const Request = require('./request');
 const RequestList = require('./request_list');
 
 // // Define Belongs for Project
-// ProjectTeam.belongsTo(Project, {
-//   foreignKey: 'project_num',
-//   onDelete: 'CASCADE',
-// });
-// Request.belongsTo(Project, {
-//   foreignKey: 'project_num',
-//   onDelete: 'CASCADE',
-// });
-// RequestList.belongsTo(Request, {
-//   foreignKey: 'project_num',
-//   onDelete: 'CASCADE',
-// });
+ProjectTeam.belongsTo(Project, {
+   foreignKey: 'project_num',
+   onDelete: 'CASCADE',
+ });
+ Request.belongsTo(Project, {
+   foreignKey: 'project_num',
+   onDelete: 'CASCADE',
+ });
+ RequestList.belongsTo(Request, {
+   foreignKey: 'project_num',
+   onDelete: 'CASCADE',
+ });
 
 
 // // Define hasMany asscociations
-// Project.hasMany(ProjectTeam, {
-//   foreignKey: 'project_num',
-// });
-// Project.hasMany(Request, {
-//   foreignKey: 'project_num',
-// });
+ Project.hasMany(ProjectTeam, {
+   foreignKey: 'project_num',
+ });
+ Project.hasMany(Request, {
+   foreignKey: 'project_num',
+ });
 
 // Define the association: Inventory belongsTo Category
 Inventory.belongsTo(Category, {
