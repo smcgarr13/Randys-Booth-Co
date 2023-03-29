@@ -24,7 +24,7 @@ Inventory.init(
       allowNull: false,
     },
       unit_cost: {
-      type: DataTypes.STRING,
+      type: DataTypes.DECIMAL,
       allowNull: false,
     },
       quantity_instock: {
@@ -45,14 +45,14 @@ Inventory.init(
         key: 'id',
       },
     },
-        project_num: {
-        type: DataTypes.INTEGER,
-        references: {
-        model: 'quote',
-        key: 'quote_num',
-      },
-        primaryKey:true,
-    },
+    //     project_num: {
+    //     type: DataTypes.INTEGER,
+    //     references: {
+    //     model: 'quote',
+    //     key: 'quote_num',
+    //   },
+    //     primaryKey:true,
+    // },
   }, 
     {
     sequelize,

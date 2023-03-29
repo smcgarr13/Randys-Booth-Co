@@ -2,6 +2,7 @@
 const router = require('express').Router();
 const categoryController = require('../../controllers/categoryController');
 const inventoryController = require('../../controllers/inventoryController');
+const { createInventory } = require('../../controllers/inventoryController');
 // const withAuth = require('../utils/auth');
 
 // Category API routes
@@ -15,6 +16,7 @@ router.delete('/categories/:id', categoryController.deleteCategory);
 router.get('/inventories', inventoryController.getAllInventories);
 router.get('/inventories/:id', inventoryController.getInventoryById);
 router.post('/inventories', inventoryController.createInventory);
+router.post('/inventory', createInventory);
 router.put('/inventories/:id', inventoryController.updateInventory);
 router.delete('/inventories/:id', inventoryController.deleteInventory);
 

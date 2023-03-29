@@ -1,0 +1,44 @@
+  {{> header}}
+  
+  <div class="card" id="edit-card">
+    <div class="form-group"></div>
+    <div id="edit-inventory-form" method="put" action="/api/inventories/{{inventory.id}}">
+    <input type="hidden" name="_method" value="PUT" />
+    </div>
+
+  <div class="card" id="edit-card">
+    <label for="item_name">Item Name:</label>
+    <input type="text" id="item_name" name="item_name" value="{{inventory.item_name}}" required />
+    </div>
+
+  <div class="card" id="edit-card">
+    <label for="item-number">Item Number:</label>
+    <input type="text" id="item-number" name="item-number" value="{{inventory.item_number}}" required />
+     </div>
+
+  <div class="card" id="edit-card">
+    <label for="item-price">Item Price:</label>
+    <input type="text" id="item-price" name="item-price" value="{{inventory.unit_cost}}" required />
+    </div>
+
+  <div class="card" id="edit-card">
+    <label for="quantity_instock">Quantity Instock:</label>
+    <input type="text" id="quantity_instock" name="quantity_instock" value="{{inventory.quantity_instock}}" required />
+    </div>
+
+  <div class="card" id="edit-card">
+    <label for="available-quantity">Available Quantity:</label>
+    <input type="text" id="available-quantity" name="available-quantity" value="{{inventory.available_quantity}}" required />
+    </div>
+
+  <div class="card" id="edit-card">
+    <label for="category-name">Category Name:</label>
+    <input type="text" id="category-name" name="category-name" value="{{inventory.category_id}}" required />
+    </div>
+
+  <button type="submit">Save Changes</button>
+    </form>
+    
+  </div>
+
+{{> footer}}

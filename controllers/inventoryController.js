@@ -46,33 +46,54 @@ const getInventoryById = async (req, res) => {
       res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
     }
   };
-  
 
 // POST a new inventory item
 const createInventory = async (req, res) => {
-    try {
-      const inventory = await Inventory.create(req.body);
+  try {
+    const inventory = await Inventory.create(req.body);
+    if (req.headers.accept.includes('application/json')) {
       res.status(200).json(inventory);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+    } else {
+      res.redirect('/inventory');
     }
-  };
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+};
 
 // PUT an update to an inventory item
 const updateInventory = async (req, res) => {
-    try {
-      const inventory = await Inventory.update(req.body, {
-        where: {
-          id: req.params.id
-        }
-      });
+  try {
+    const inventory = await Inventory.update(req.body, {
+      where: {
+        id: req.params.id,
+      },
+    });
+
+    if (req.headers.accept.includes('application/json')) {
       res.status(200).json(inventory);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+    } else {
+      res.redirect('/inventory');
     }
-  };
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+};
+// const updateInventory = async (req, res) => {
+//     try {
+//       const inventory = await Inventory.update(req.body, {
+//         where: {
+//           id: req.params.id
+//         }
+//       });
+//       res.status(200).json(inventory);
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   };
 
 // DELETE an inventory item
 const deleteInventory = async (req, res) => {
