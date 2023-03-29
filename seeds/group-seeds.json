@@ -1,0 +1,25 @@
+[
+    {
+      "project_num": "ABC123",
+      "employee_name": "Jeff",
+      "employee_role": "Manager",
+      "employee_email": "jeff@fake.com"
+    },
+    {
+        "project_num": "ABC123",
+        "employee_name": "Bill",
+        "employee_role": "Engineer",
+        "employee_email": "bill@fake.com"
+      },
+      {
+        "project_num": "DEF456",
+        "employee_name": "Cara",
+        "employee_role": "Manager",
+        "employee_email": "cara@fake.com"
+      },    {
+        "project_num": "DEF456",
+        "employee_name": "Aron",
+        "employee_role": "Engineer",
+        "employee_email": "aron@fake.com"
+      }
+  ]

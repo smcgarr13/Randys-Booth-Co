@@ -16,8 +16,11 @@ Request .init(
 
     },
     request_num: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey:true,
+      // autoIncrement: true,
+
     },
     project_num: {
         type: DataTypes.INTEGER,
@@ -25,7 +28,6 @@ Request .init(
           model: 'quote',
           key: 'quote_num',
         },
-      primaryKey:true,
       },
     request_to:{
         type: DataTypes.STRING,

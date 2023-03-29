@@ -3,7 +3,6 @@ const router = require('express').Router();
 // const categoryController = require('../controllers/api/categoryController');
 const inventoryController = require('../controllers/inventoryController');
 // const withAuth = require('../utils/auth');
-
 // login route
 router.get('/login', (req, res) => {
     res.render('login');

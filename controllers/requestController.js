@@ -87,3 +87,33 @@ exports.getRequests = async (req, res) => {
       res.status(500).json(err);
     }
   };
+
+  exports.updateRequest = async (req, res) => {
+    try {
+      const request = await Request.update(req.body, {
+        where: {
+          id: req.params.id
+        }
+      });
+      res.status(200).json(request);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  };
+  exports.deleteRequest = async (req, res) => {
+    try {
+      const request = await Request.destroy({
+        where: {
+          project_num: id
+        }
+      });
+      if (!request) {
+        return res.status(404).json({ error: 'Request item not found' });
+      }
+      res.status(200).json({ message: 'Request item deleted successfully' });
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err);
+    }
+  };

@@ -2,7 +2,7 @@
 const sequelize = require('../config/connection');
 const inventoryData = require('./inventory-seeds.json');
 const categoryData = require('./category-seeds.json');
-const { Category, Inventory } = require('../Models');
+const { Category, Inventory,Project,ProjectTeam,Request,Employee} = require('../Models');
 
 // Define the function to seed the database with sample data
 const seedDatabase = async () => {
@@ -17,6 +17,20 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+  await Project.bulkCreate(inventoryData, {
+    individualHooks: true,
+    returning: true,
+  });
+  await ProjectTeam.bulkCreate(inventoryData, {
+    individualHooks: true,
+    returning: true,
+  });
+  await Request.bulkCreate(inventoryData, {
+    individualHooks: true,
+    returning: true,
+  });
+
+  await Employee.bulkCreate();
 
   // Exit the process once seeding is complete
   process.exit(0);

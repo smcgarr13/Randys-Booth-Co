@@ -1,0 +1,24 @@
+{{> header}}
+
+<div id="inventory-container">
+   <div class="row">
+  {{#each Request}}
+    <div class="card"> 
+      <div class="container">
+        <ul class="list-group" style="list-style-type: none;" class="inventory-details">
+          <li class="item-name"> Request Type: {{request_type}}</li>
+          <li class="item-number"> Request Number: {{request_num}}</li>
+          <li class="unit-cost"> Project Number: ${{project_num}}</li>
+          <li class="quantity_instock">Request for:{{request_to}}</li>
+          <li class="item-number"> Order Date: {{order_date}}</li>
+          <li class="unit-cost"> Required Date: ${{required_date}}</li>
+          <li class="quantity_instock">Total Cost: {{total_cost}}</li>
+            {{!-- <li class="quantity_instock"><a href="/{{project_num}}/team">Request Details</a></li> --}}
+        </ul>
+      </div>
+    </div>
+  {{/each}}
+  </div>
+</div>
+
+{{> footer}}

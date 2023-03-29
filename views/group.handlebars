@@ -1,0 +1,20 @@
+{{> header}}
+
+<div id="inventory-container">
+   <div class="row">
+  {{#each ProjectTeam}}
+    <div class="card"> 
+      <div class="container">
+        <ul class="list-group" style="list-style-type: none;" class="inventory-details">
+          <li class="item-name"> Employee Name: {{employee_name}}</li>
+          <li class="item-number"> Employee Role: {{employee_role}}</li>
+          <li class="unit-cost"> Employee Email: ${{employee_email}}</li>
+          <li class="quantity_instock">Project Number: {{project_num}}</li>
+        </ul>
+      </div>
+    </div>
+  {{/each}}
+  </div>
+</div>
+
+{{> footer}}
