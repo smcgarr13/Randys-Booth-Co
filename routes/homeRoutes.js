@@ -7,6 +7,11 @@ const inventoryController = require('../controllers/inventoryController');
 router.get('/login', (req, res) => {
     res.render('login');
   });
+  
+// rendering login as temporary home page
+router.get('/', (req, res) => {
+    res.render('login');
+  });
 
 // Non-API routes for rendering the pages
 router.get('/Sheet-Goods/:id', inventoryController.getInventoryByCategory);

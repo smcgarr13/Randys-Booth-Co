@@ -40,6 +40,24 @@ router.get('/inventory', async (req, res) => {
   }
 });
 
+// Route to fetch and display inventory item for editing
+router.get('/inventory/edit/:id', async (req, res) => {
+  try {
+    const inventoryItem = await Inventory.findByPk(req.params.id, {
+      include: [Category],
+    });
+
+    if (!inventoryItem) {
+      return res.status(404).json({ error: 'Inventory item not found' });
+    }
+
+    res.render('edit-inventory', { inventory: inventoryItem.get({ plain: true }) });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while fetching the inventory item.' });
+  }
+});
+
 // Define the route to render the inventory landing page
 router.get('/inventory-landing', async (req, res) => {
   var categories = await Category.findAll({})

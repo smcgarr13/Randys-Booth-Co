@@ -253,7 +253,54 @@ img {
     color: #212121;
   }
   
+  .edit-button {
+    background-color: #DF6301;
+    border: 1px solid floralwhite;
+    border-radius: 20px;
+    color:floralwhite;
+    width: 200px;
+    padding: 6px;
+    margin: 20px 0px 20px 0px;
+    align-items: center;
+  }
   --------------------------------------------------------------
+
+/* add form (project & inventory) */
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.05rem;
+  }
+
+  .form-group label {
+    margin-bottom: 0.05rem;
+  }
+
+  .form-group input {
+    width: 100%;
+    background-color: floralwhite;
+    border: floralwhite;
+  }
+
+  .submit {
+    margin: 10px 0 0 0;
+  }
+
+  --------------------------------------------------------------
+
+  /* edit card */
+
+  #edit-card {
+    max-width: 300px !important;
+  }
+
+  #edit-inventory-form {
+    margin: 0 0 30px 0;
+  }
+  
+
+--------------------------------------------------------------
 
 /* log-in prompt */
 .login-page-container {

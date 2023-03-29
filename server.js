@@ -10,6 +10,7 @@ const Inventory = require('./Models/inventory-model');
 const homeRoutes = require('./routes/homeRoutes');
 const apiRoutes = require('./routes/api');
 const viewRoutes = require('./routes/api/viewRoutes'); 
+const inventoryRoutes = require('./routes/api/inventory-routes');
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // const helpers = require('./utils/helpers');
@@ -44,7 +45,6 @@ const sess = {
   })
 };
 
-
 // Set up Handlebars as the view engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
@@ -56,13 +56,18 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Middleware to enable support for PUT and DELETE methods in forms
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
+
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up application routes
 app.use('/api', apiRoutes);
-app.use('/', homeRoutes);
+app.use('/api', inventoryRoutes);
 app.use('/', viewRoutes); 
+app.use('/', homeRoutes);
 // app.use(routes);
 
 // Sync Sequelize models and start the server

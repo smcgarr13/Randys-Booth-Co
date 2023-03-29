@@ -6,9 +6,10 @@
         <p align="center">Search for projects or inventory</p>
 
   <div class="search-input">
-      <form action="/search" method="GET" class="search-form">
-         <input type="text" class="form-control" name="query" id="search" placeholder="Name or ID *"/>
-         <button type="submit" style="display:none;"></button>
+      {{!-- <form action="/search" method="GET" class="search-form"> --}}
+       <form id="search-form">
+         <input type="text" class="form-control" id="search" placeholder="Name or ID *"/>
+         <button id="search-form">Search</button>
       </form>
    </div>
 
@@ -16,3 +17,5 @@
     <div class="black-line"></div>
 
 </footer>
+
+ <script src="/js/search.js"></script>

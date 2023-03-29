@@ -1,9 +1,9 @@
 {{> header}}
 
 <div id="inventory-container">
-   <div class="row">
-  {{#each inventory}}
-    <div class="card"> 
+  <div class="row">
+    {{#each inventory}}
+    <div class="card">
       <div class="container">
         <ul class="list-group" style="list-style-type: none;" class="inventory-details">
           <li class="item-name">Item Name: {{item_name}}</li>
@@ -12,11 +12,88 @@
           <li class="quantity_instock">Quantity Instock: {{quantity_instock}}</li>
           <li class="available-quantity">Available Quantity: {{available_quantity}}</li>
           <li class="category-name">Category Name: {{category.category_name}}</li>
+           <button class="edit-button" onclick="location.href='/inventory/edit/{{id}}'">Edit</button>
         </ul>
+           
       </div>
     </div>
-  {{/each}}
+    {{/each}}
+
+    {{!-- Add inventory item form --}}
+    <div class="card">
+      <div class="container">
+        <form id="add-inventory-form" action="/api/inventory" method="POST">
+        <div class="form-group">
+          <label for="item_name">Item Name:</label>
+          <input type="text" id="item_name" name="item_name" required>
+        </div>
+        <div class="form-group">
+          <label for="item_number">Item Number:</label>
+          <input type="text" id="item_number" name="item_number" required>
+        </div> 
+        <div class="form-group">  
+          <label for="unit_cost">Unit Cost:</label>
+          <input type="number" id="unit_cost" name="unit_cost" required>
+        </div>   
+        <div class="form-group">
+          <label for="quantity_instock">Quantity in Stock:</label>
+          <input type="number" id="quantity_instock" name="quantity_instock" required>
+        </div>   
+        <div class="form-group">  
+          <label for="available_quantity">Available Quantity:</label>
+          <input type="number" id="available_quantity" name="available_quantity" required>
+        </div> 
+        <div class="form-group"> 
+          <label for="category_id">Category ID:</label>
+          <input type="number" id="category_id" name="category_id" required>
+        </div>   
+          <button type="submit" class="submit">Add Inventory</button>
+        </form>
+      </div>
+    </div>
   </div>
 </div>
+
+<script>
+  document.getElementById('add-inventory-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+
+    try {
+      const response = await fetch('/api/inventories', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
+        body: JSON.stringify(data),
+    });
+
+      const json = await response.json();
+
+  // Create a new card and populate it with the item details
+    const card = document.createElement('div');
+    card.className = 'card';
+    card.innerHTML = `
+      <div class="container">
+        <ul class="list-group" style="list-style-type: none;" class="inventory-details">
+          <li class="item-name">Item Name: ${json.item_name}</li>
+          <li class="item-number">Item Number: ${json.item_number}</li>
+          <li class="unit-cost">Item Price: $${json.unit_cost}</li>
+          <li class="quantity_instock">Quantity Instock: ${json.quantity_instock}</li>
+          <li class="available-quantity">Available Quantity: ${json.available_quantity}</li>
+          <li class="category-name">Category Name: ${json.category_id}</li>
+        </ul>
+      </div>
+    `;
+
+    // Add the new card to the DOM
+    document.querySelector('#inventory-container .row').appendChild(card);
+  } catch (error) {
+    console.error('Error adding inventory item:', error);
+  }
+});
 
 {{> footer}}
