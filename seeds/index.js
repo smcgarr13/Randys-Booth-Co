@@ -17,6 +17,18 @@ const seedDatabase = async () => {
     individualHooks: true,
     returning: true,
   });
+  await Project.bulkCreate(inventoryData, {
+    individualHooks: true,
+    returning: true,
+  });
+  await ProjectTeam.bulkCreate(inventoryData, {
+    individualHooks: true,
+    returning: true,
+  });
+  await Request.bulkCreate(inventoryData, {
+    individualHooks: true,
+    returning: true,
+  });
 
   await Employee.bulkCreate();
 

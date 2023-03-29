@@ -1,0 +1,22 @@
+{{> header}}
+
+<div id="project-container">
+   <div class="row">
+  {{#each inventory}}
+    <div class="card"> 
+      <div class="container">
+        <ul class="list-group" style="list-style-type: none;" class="project-details">
+          <li class="project-name">Project Name: {{Project_name}}</li>
+          <li class="project-number">Project Num: {{project_num}}</li>
+          <li class="buyer-name">Client's Name: ${{buyer_name}}</li>
+          <li class="buyer-email">Client's Email: {{buyer_email}}</li>
+          <li class="starting-date">Project Start Date: {{starting_date}}</li>
+          <li class="delivery-date">Delivery Date: {{delivery_date}}</li>
+        </ul>
+      </div>
+    </div>
+  {{/each}}
+  </div>
+</div>
+
+{{> footer}}
