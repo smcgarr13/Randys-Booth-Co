@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <form name="booth-matrix" method="post">
+    <label for="Booth-height">What is the desired booth height?</label>
+    <select name="Booth-height" id="booth-height">
+      <option value="36in">36"H</option>
+      <option value="42in">42"H</option>
+      <option value="48in">48"H</option>
+      <option value="54in">54"H</option>
+      <option value="60in">60"H</option>
+      <option value="more-than-60in">>60"H</option>
+    </select>
+    <br>
+    <label for="Plain-back">Will the booth have a plain back?</label>
+    <input type="checkbox" name="Plain-back" id="booth-back">
+    <br>
+    <label for="design-1">Will the booth include button pulls, sewn panel or a head roll?</label>
+    <input type="checkbox" name="design-1" id="design-1">
+    <br>
+    <label for="booth-channel">Will the booth have channels?</label>
+    <input type="checkbox" name="booth-channel" id="booth-channel">
+    <label for="tuft">Will the booth have tuft?</label>
+    <input type="checkbox" name="tuft" id="tuft">
+    <label for="tuft-type">What kind of tuft?</label>
+    <select name="tuft-type" id="tuft-types">
+      <option value="diamond">Diamond</option>
+      <option value="bisque">Bisque</option>
+    </select>
+    <label for="pin-tucking">Will you like pin tucking on the booth</label>
+    <input type="checkbox" name="pin-tucking" id="pin-tuck">
+    <label for="wood">Would you like wooden finishes?</label>
+    <input type="checkbox" name="wood" id="wooden-finish">
+  </form>
+
+  <div>
+    Total per booth:
+  </div>
+</body>
+</html>
