@@ -3,7 +3,7 @@ const projectController = require('../controllers/projectController');
 const withAuth = require('../utils/auth');
 
 // route to create/add a home using async/await
-router.get('/projects', projectController.getProjects);
+router.get('/', projectController.getProjects);
 router.get('/projects/:num', withAuth,projectController.getSingleProject);
 router.post('/projects/:num', projectController.createProject);
 router.put('/projects/:num',projectController.updateProject);

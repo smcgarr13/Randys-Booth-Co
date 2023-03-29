@@ -20,15 +20,15 @@ exports.getProjects = async (req, res) => {
           },
         ],
       });
+      res.json(dbProjectData);
+      // const projects = dbProjectData.map((project) =>
+      //   request.get({ plain: true })
+      // );
   
-      const projects = dbProjectData.map((project) =>
-        request.get({ plain: true })
-      );
-  
-      res.render('projects', {
-        projects,
-        loggedIn: req.session.loggedIn,
-      });
+      // res.render('Project', {
+      //   projects,
+      //   loggedIn: req.session.loggedIn,
+      // });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
