@@ -30,6 +30,8 @@ const seedDatabase = async () => {
     returning: true,
   });
 
+  await Employee.bulkCreate();
+
   // Exit the process once seeding is complete
   process.exit(0);
 };
