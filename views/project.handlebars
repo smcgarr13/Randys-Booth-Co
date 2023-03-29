@@ -2,7 +2,7 @@
 
 <div id="project-container">
    <div class="row">
-  {{#each inventory}}
+  {{#each Project}}
     <div class="card"> 
       <div class="container">
         <ul class="list-group" style="list-style-type: none;" class="project-details">
@@ -12,6 +12,8 @@
           <li class="buyer-email">Client's Email: {{buyer_email}}</li>
           <li class="starting-date">Project Start Date: {{starting_date}}</li>
           <li class="delivery-date">Delivery Date: {{delivery_date}}</li>
+          <li class="quantity_instock"><a href="/{{project_num}}/team">Project Team</a></li>
+          <li class="quantity_instock"><a href="/{{project_num}}/request">Get Requests</a></li>
         </ul>
       </div>
     </div>
