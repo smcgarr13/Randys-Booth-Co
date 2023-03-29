@@ -1,13 +1,13 @@
 [
     {
       "project_num": "ABC123",
-      "request_num":"JOB1234",
+      "request_num":"JOB1233",
       "request_type": "Purchase Order",
       "request_to": "Fake Manufacturing", 
       "request_date": "2022-01-17",
       "order_date": "2022-01-30",
       "required_date": "2022-03-30",
-      "total_cost": 300
+      "total_cost": 3
     },
     {
         "project_num": "DEF456",
@@ -17,7 +17,7 @@
         "request_date": "2023-01-17",
         "order_date": "2023-01-30",
         "required_date": "2023-03-30",
-        "total_cost": 500
+        "total_cost": 5
       },
       {
         "project_num": "ABC123",
@@ -27,7 +27,7 @@
         "request_date": "2022-01-29",
         "order_date": "2022-01-30",
         "required_date": "2022-02-12",
-        "total_cost": 200
+        "total_cost": 2
       },
       {
         "project_num": "ABC123",
@@ -37,6 +37,6 @@
         "request_date": "2022-03-28",
         "order_date": "2022-03-28",
         "required_date": "2022-04-06",
-        "total_cost": 300
+        "total_cost": 3
       }
   ]

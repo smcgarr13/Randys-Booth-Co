@@ -11,12 +11,11 @@ RequestList.init(
       primaryKey:true,
     },
     project_num: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'quote',
-        key: 'quote_num',
-      },
-      primaryKey:true,
+      type: DataTypes.STRING,
+      // references: {
+      //   model: 'quote',
+      //   key: 'quote_num',
+      // },
     },
     qty_num: {
       type: DataTypes.INTEGER,

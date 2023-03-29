@@ -7,10 +7,10 @@ Project.init(
   {
     project_num: {
       type: DataTypes.STRING,
-      references: {
-        model: 'quote',
-        key: 'quote_num',
-      },
+      // references: {
+      //   model: 'quote',
+      //   key: 'quote_num',
+      // },
       primaryKey:true,
       allowNull: false,
     },
@@ -34,11 +34,11 @@ Project.init(
     },
     delivery_date: {
       type: DataTypes.DATE, 
-      defaultValue:"TBD", 
+      // defaultValue:"TBD", 
     },
-    project_description:{
-      type: DataTypes.ARRAY(DataTypes.STRING)
-    },
+    // project_description:{
+    //   type: DataTypes.ARRAY(DataTypes.STRING)
+    // },
     complete:{
       type:DataTypes.BOOLEAN,
       defaultValue: false,
