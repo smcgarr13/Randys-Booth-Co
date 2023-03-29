@@ -57,8 +57,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Middleware to enable support for PUT and DELETE methods in forms
-const methodOverride = require('method-override');
-app.use(methodOverride('_method'));
+// const methodOverride = require('method-override');
+// app.use(methodOverride('_method'));
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));

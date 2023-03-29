@@ -6,9 +6,6 @@ exports.getProjects = async (req, res) => {
     try {
       // Find requests by the quote num attached. 
       const dbProjectData = await Project.findAll({
-        where:{
-          project_num: num,
-        },
         include: [
           {
             model: Project,
@@ -44,8 +41,7 @@ exports.getProjects = async (req, res) => {
     try {
       const dbProjectData = await Project.findOne({
         where:{
-          project_num: id,
-          request_num: num, 
+          project_num: num,
         },
         include: [
           {

@@ -11,45 +11,46 @@ Request .init(
         allowNull: false,
     },
     request_date:{
-        type:DataTypes.INTEGER,
+        type:DataTypes.DATE,
         allowNull: false,
 
     },
     request_num: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
       primaryKey:true,
       // autoIncrement: true,
 
     },
     project_num: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: 'quote',
-          key: 'quote_num',
-        },
+        type: DataTypes.STRING,
+        allowNull: false,
+        // references: {
+        //   model: 'quote',
+        //   key: 'quote_num',
+        // },
       },
     request_to:{
         type: DataTypes.STRING,
     },
     project_name:{
         type: DataTypes.STRING,
-        allowNull: false,
     },
     ship_to: {
       type: DataTypes.STRING,
-      allowNull: false,
     },
     // Ship to or name of place. 
     To_desc: {
       type: DataTypes.STRING,
     },
     order_date: {
+      // type:DataTypes.INTEGER,
       type: DataTypes.DATE,
       allowNull: false,
     },
     required_date: {
         // Can be end of quote, needed date for request,
+        // type:DataTypes.INTEGER,
       type: DataTypes.DATE, 
       allowNull: false, 
     },
