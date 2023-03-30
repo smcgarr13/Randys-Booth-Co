@@ -108,6 +108,99 @@ img {
 }
 
 --------------------------------------------------------------
+
+/* log-in prompt */
+.login-page-container {
+  display: flex;
+  height: 100vh;
+}
+
+  .container-login {
+    background-color: #DF6301;
+    color: floralwhite;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3 {
+    font-size: 15px;
+    padding-top: 60px;
+    text-align: center;
+  }
+
+  .container-login h3 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+
+  .container-login {
+  background-color: #DF6301;
+  color: floralwhite;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  height: 350px;
+  width: 600px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.login-form, .signup-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.form-control {
+  margin: 15px 0px 15px 0px;
+  padding: 5px;
+  width: 300px; 
+  height: 40px;
+  background-color: floralwhite;
+  border: none;
+  align-items: center;
+}
+
+  button {
+    background-color: #DF6301;
+    border: 1px solid floralwhite;
+    border-radius: 20px;
+    color:floralwhite;
+    width: 200px;
+    padding: 6px;
+    margin: 20px 0px 40px 0px;
+    align-items: center;
+  }
+  
+  #sign-up-button {
+    margin: 20px 0px 60px 0px;
+  }
+
+--------------------------------------------------------------
   
 /* projects */
 
@@ -205,7 +298,8 @@ img {
   .card {
     display: flex;
     flex-direction: column;
-    flex: 0 0 calc(24.5% - 1rem);
+    /* flex: 0 0 calc(24.5% - 1rem); */
+    width: 22.5%;
     margin-bottom: 1rem;
     background-color: #ccc;
     color: floralwhite;
@@ -291,108 +385,39 @@ img {
 
   /* edit card */
 
-  #edit-card {
-    max-width: 300px !important;
-  }
-
-  #edit-inventory-form {
-    margin: 0 0 30px 0;
-  }
-  
-
---------------------------------------------------------------
-
-/* log-in prompt */
-.login-page-container {
-  display: flex;
-  height: 100vh;
-}
-
-  .container-login {
-    background-color: #DF6301;
-    color: floralwhite;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 600px;
-    margin-left: auto;
+  .edit-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 15px;
+  }
+  
+  .edit-card .form-group {
+    padding: 10px 3px 0 15px;
+  }
+  
+  .edit-card input {
+    width: 80%;
+    padding: 3px;
+    margin: 10px 0;
   }
 
-  h3 {
-    font-size: 15px;
-    padding-top: 50px;
-    text-align: center;
+  .edit-card label {
+    margin: 10px 5px 10px 5px;
   }
 
-  .container-login h3 {
-    margin-top: 20px;
-    margin-bottom: 10px;
-  }
-
-  .container-login {
-  background-color: #DF6301;
-  color: floralwhite;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 600px; 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.center-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.login-form, .signup-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.input-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.form-control {
-  margin: 15px 0px 15px 0px;
-  padding: 5px;
-  width: 300px; 
-  height: 40px;
-  background-color: floralwhite;
-  border: none;
-  align-items: center;
-}
-
-  button {
+   #submit-button {
     background-color: #DF6301;
     border: 1px solid floralwhite;
     border-radius: 20px;
     color:floralwhite;
     width: 200px;
     padding: 6px;
-    margin: 20px 0px 60px 0px;
+    margin: 20px 0px 20px 0px;
     align-items: center;
   }
   
-  #sign-up-button {
-    margin: 20px 0px 60px 0px;
-  }
-
   --------------------------------------------------------------
 
 /* footer */
@@ -415,16 +440,43 @@ img {
   
   .search-input {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #search {
+    margin-right: 10px;
   }
   
   #search.form-control {
     margin: 15px 0px 15px 0px;
+    padding: 10px;
     width: 300px;
     height: 40px;
     background-color: #ccc;
     border: none;
     align-items: center;
+  }
+
+  #search-form {
+    display: flex;
+    align-items: center;
+  }
+
+  #search-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100px;
+    margin: 5px 10px;
+    text-align: center;
+    background-color: #DF6301;
+    border: 1px solid floralwhite;
+    border-radius: 20px;
+    color:floralwhite;
+    padding: 6px;
+    margin: 0px 20px 0px 20px;
   }
   
   .orange-line {
