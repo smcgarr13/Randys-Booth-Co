@@ -6,7 +6,7 @@ const homeRoutes = require('./homeRoutes');
 const apiRoutes = require('./api');
 const inventoryRoutes = require('../routes/api/inventory-routes');
 const teamRoutes = require('./projectGroupRoutes');
-const projectRoutes = require('./project')
+const projectRoutes = require('./projectRoutes');
 // Register the imported route modules with the main router
 // Landing pagee showing all project related to user. 
 router.use('/', homeRoutes);
