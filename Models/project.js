@@ -48,7 +48,7 @@ Project.init(
     sequelize,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Project',
+    modelName: 'project',
   }
 );
 

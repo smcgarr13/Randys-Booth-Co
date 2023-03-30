@@ -6,12 +6,13 @@ exports.getProjects = async (req, res) => {
     try {
       // Find requests by the quote num attached. 
      
-  const dbProjectData = await Project.findAll();
-  const projects = dbProjectData.map((project) =>
-    project.get({ plain: true })
-  );
-  console.log(dbProjectData);
-  res.render('Project', {projects});
+    const dbProjectData = await Project.findAll();
+    res.status(200).json(dbProjectData);
+  // console.log(dbProjectData);
+  // const projects = dbProjectData.map((project) =>
+  //   project.get({ plain: true })
+  // );
+  // res.render('Project', {projects});
       // const projects = dbProjectData.map((project) =>
       //   request.get({ plain: true })
       // );

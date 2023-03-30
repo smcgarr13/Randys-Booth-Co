@@ -8,7 +8,7 @@ const homeRoutes = require('./routes/homeRoutes');
 const apiRoutes = require('./routes/api');
 const viewRoutes = require('./routes/api/viewRoutes'); 
 const inventoryRoutes = require('./routes/api/inventory-routes');
-const projectRoutes = require('./routes/project'); 
+const projectRoutes = require('./routes/projectRoutes'); 
 
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
@@ -68,7 +68,7 @@ app.use('/api', apiRoutes);
 app.use('/api', inventoryRoutes);
 app.use('/', viewRoutes); 
 app.use('/', homeRoutes);
-app.use('/api', projectRoutes); 
+app.use('/projects', projectRoutes); 
 // app.use(routes);
 
 // Sync Sequelize models and start the server
