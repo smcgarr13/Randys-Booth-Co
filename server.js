@@ -4,15 +4,15 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const handlebars = require('handlebars');
-// const routes = require('./controllers');
-const Category = require('./Models/category-model');
-const Inventory = require('./Models/inventory-model');
 const homeRoutes = require('./routes/homeRoutes');
 const apiRoutes = require('./routes/api');
 const viewRoutes = require('./routes/api/viewRoutes'); 
 const inventoryRoutes = require('./routes/api/inventory-routes');
+const projectRoutes = require('./routes/project'); 
+
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 // const helpers = require('./utils/helpers');
 
 // Initialize Express app
@@ -68,6 +68,7 @@ app.use('/api', apiRoutes);
 app.use('/api', inventoryRoutes);
 app.use('/', viewRoutes); 
 app.use('/', homeRoutes);
+app.use('/api', projectRoutes); 
 // app.use(routes);
 
 // Sync Sequelize models and start the server
