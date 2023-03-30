@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {Project} = require('../models');
+const {Project} = require('../Models');
 
 // GET all Projects from Project. 
 exports.getProjects = async (req, res) => {
