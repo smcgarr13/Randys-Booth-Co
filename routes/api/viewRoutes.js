@@ -19,7 +19,7 @@ router.get('/projects', async (req, res) => {
     project.get({ plain: true })
   );
  
-  res.render('Project', {dbProjectData});
+  res.render('Project', {projects:dbProjectData});
 
   });
 // Define the route to fetch and display inventory items by category ID

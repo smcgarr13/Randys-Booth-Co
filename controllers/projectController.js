@@ -1,4 +1,4 @@
-const router = require('express').Router();
+// const router = require('express').Router();
 const {Project} = require('../models');
 
 // GET all Projects from Project. 
@@ -6,7 +6,21 @@ exports.getProjects = async (req, res) => {
     try {
       // Find requests by the quote num attached. 
      
-  const dbProjectData = await Project.findAll();
+  const dbProjectData = await Project.findAll(
+    // {
+//     include:[
+//       {
+//     attributes: [
+//       'project_name',
+//       'project_num',
+//       'buyer_name',
+//       'buyer_email',
+//       'starting_date',
+//       'delivery_date',
+//       ]}
+//  ]
+//   }
+ );
   const projects = dbProjectData.map((project) =>
     project.get({ plain: true })
   );

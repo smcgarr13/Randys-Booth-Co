@@ -1,19 +1,19 @@
 {{> header}}
 
-<div id="project-container">
+<div id="inventory-container">
    <div class="row">
   {{#each Project}}
     <div class="card"> 
       <div class="container">
-        <ul class="list-group" style="list-style-type: none;" class="project-details">
-          <li class="project-name">Project Name: {{Project_name}}</li>
-          <li class="project-number">Project Num: {{project_num}}</li>
-          <li class="buyer-name">Client's Name: ${{buyer_name}}</li>
-          <li class="buyer-email">Client's Email: {{buyer_email}}</li>
-          <li class="starting-date">Project Start Date: {{starting_date}}</li>
-          <li class="delivery-date">Delivery Date: {{delivery_date}}</li>
-          <li class="quantity_instock"><a href="/{{project_num}}/team">Project Team</a></li>
-          <li class="quantity_instock"><a href="/{{project_num}}/request">Get Requests</a></li>
+        <ul class="list-group" style="list-style-type: none;" class="inventory-details">
+          <li class="item-name">Project Name: {{Project_name}}</li>
+          <li class="item-number">Project Num: {{project_num}}</li>
+          <li class="item-name">Client's Name: ${{buyer_name}}</li>
+          <li class="item-name">Client's Email: {{buyer_email}}</li>
+          <li class="item-number">Project Start Date: {{starting_date}}</li>
+          <li class="item-number">Delivery Date: {{delivery_date}}</li>
+          <li class="category-name"><a href="/{{project_num}}/team">Project Team</a></li>
+          <li class="category-name"><a href="/{{project_num}}/request">Get Requests</a></li>
         </ul>
       </div>
     </div>
