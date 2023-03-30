@@ -11,10 +11,13 @@ const projectRoutes = require('./project')
 // Landing pagee showing all project related to user. 
 router.use('/', homeRoutes);
 
+router.use('/projects',projectRoutes);
+router.use('/team',teamRoutes);
+
 // Configure the router to use API routes and inventory routes
 router.use('/api', apiRoutes);
 router.use('/api/i', inventoryRoutes);
-router.use('/projects',projectRoutes);
+
 
 
 // Export the router for use in other modules

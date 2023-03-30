@@ -1,6 +1,6 @@
 // Import required dependencies and models
 const router = require('express').Router();
-const { Category, Inventory } = require('../../Models');
+const { Category, Inventory,Project } = require('../../Models');
 
 // Define the route to render the login page
 router.get('/login', (req, res) => {
@@ -12,6 +12,16 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Route for fetching all projects. 
+router.get('/projects', async (req, res) => {
+  const dbProjectData = await Project.findAll();
+  const projects = dbProjectData.map((project) =>
+    project.get({ plain: true })
+  );
+ 
+  res.render('Project', {dbProjectData});
+
+  });
 // Define the route to fetch and display inventory items by category ID
 router.get('/inventory/:id', async (req, res) => {
   var inventoryItems = await Inventory.findAll({

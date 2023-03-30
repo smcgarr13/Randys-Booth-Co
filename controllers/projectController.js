@@ -5,30 +5,21 @@ const {Project} = require('../models');
 exports.getProjects = async (req, res) => {
     try {
       // Find requests by the quote num attached. 
-      const dbProjectData = await Project.findAll({
-        include: [
-          {
-            model: Project,
-            attributes: [
-              'project_name',
-              'project_num',
-              'buyer_name',
-              'buyer_email',
-              'starting_date',
-              'delivery_date',
-            ],
-          },
-        ],
-      });
+     
+  const dbProjectData = await Project.findAll();
+  const projects = dbProjectData.map((project) =>
+    project.get({ plain: true })
+  );
+  console.log(dbProjectData);
+  res.render('Project', {projects});
+      // const projects = dbProjectData.map((project) =>
+      //   request.get({ plain: true })
+      // );
   
-      const projects = dbProjectData.map((project) =>
-        request.get({ plain: true })
-      );
-  
-      res.render('projects', {
-        projects,
-        loggedIn: req.session.loggedIn,
-      });
+      // res.render('Project', {
+      //   projects,
+      //   loggedIn: req.session.loggedIn,
+      // });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
