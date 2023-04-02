@@ -4,14 +4,18 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const handlebars = require('handlebars');
-const homeRoutes = require('./routes/homeRoutes');
-const apiRoutes = require('./routes/api');
-const viewRoutes = require('./routes/api/viewRoutes'); 
-const inventoryRoutes = require('./routes/api/inventory-routes');
-const projectRoutes = require('./routes/projectRoutes'); 
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const routes = require('./routes');
+const userRoutes = require('./routes/api/userRoutes'); 
+// const homeRoutes = require('./routes/homeRoutes');
+// const apiRoutes = require('./routes/api');
+// const viewRoutes = require('./routes/viewRoutes'); 
+// const inventoryRoutes = require('./routes/inventory-routes');
+// const projectRoutes = require('./routes/projectRoutes'); 
 
 const sequelize = require('./config/connection');
-const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
 
 // const helpers = require('./utils/helpers');
 
@@ -56,20 +60,22 @@ app.use(session(sess));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Middleware to enable support for PUT and DELETE methods in forms
-// const methodOverride = require('method-override');
-// app.use(methodOverride('_method'));
-
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up application routes
-app.use('/api', apiRoutes);
-app.use('/api', inventoryRoutes);
-app.use('/', viewRoutes); 
-app.use('/', homeRoutes);
-app.use('/projects', projectRoutes); 
-// app.use(routes);
+// app.use('/api', apiRoutes);
+// // app.use('/api', inventoryRoutes);
+// app.use('/inventories', inventoryRoutes);
+// app.use('/', viewRoutes); 
+// app.use('/', homeRoutes);
+// app.use('/projects', projectRoutes); 
+
+// Set up user routes
+// app.use('/api/users', userRoutes); 
+// Set up application routes
+app.use(routes);
+
 
 // Sync Sequelize models and start the server
 sequelize.sync({ force: false }).then(() => {

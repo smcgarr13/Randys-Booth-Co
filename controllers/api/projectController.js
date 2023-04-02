@@ -1,31 +1,42 @@
 const router = require('express').Router();
-const {Project} = require('../Models');
+const {Project} = require('../../Models');
 
 // GET all Projects from Project. 
 exports.getProjects = async (req, res) => {
-    try {
-      // Find requests by the quote num attached. 
-     
+  try {
     const dbProjectData = await Project.findAll();
-    res.status(200).json(dbProjectData);
-  // console.log(dbProjectData);
-  // const projects = dbProjectData.map((project) =>
-  //   project.get({ plain: true })
-  // );
-  // res.render('Project', {projects});
-      // const projects = dbProjectData.map((project) =>
-      //   request.get({ plain: true })
-      // );
+    const projects = dbProjectData.map((project) => project.get({ plain: true }));
+    // res.render('Project', { projects });
+    res.render('project', { projects });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+};
+// exports.getProjects = async (req, res) => {
+//     try {
+//       // Find requests by the quote num attached. 
+     
+//     const dbProjectData = await Project.findAll();
+//     res.status(200).json(dbProjectData);
+//   // console.log(dbProjectData);
+//   // const projects = dbProjectData.map((project) =>
+//   //   project.get({ plain: true })
+//   // );
+//   // res.render('Project', {projects});
+//       // const projects = dbProjectData.map((project) =>
+//       //   request.get({ plain: true })
+//       // );
   
-      // res.render('Project', {
-      //   projects,
-      //   loggedIn: req.session.loggedIn,
-      // });
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  };
+//       // res.render('Project', {
+//       //   projects,
+//       //   loggedIn: req.session.loggedIn,
+//       // });
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   };
 
 
   // Get One Project from the Project. 
@@ -33,7 +44,8 @@ exports.getProjects = async (req, res) => {
     try {
       const dbProjectData = await Project.findOne({
         where:{
-          project_num: num,
+          // project_num: num,
+          project_num: req.params.num,
         },
         include: [
           {

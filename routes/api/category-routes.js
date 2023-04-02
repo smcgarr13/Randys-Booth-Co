@@ -2,6 +2,9 @@
 const express = require('express');
 const router = express.Router();
 
+// // Import category-related controller functions
+// const categoryController = require('../controllers/categoryControllerr');
+
 // Import category-related controller functions
 const {
   getAllCategories,
@@ -9,7 +12,7 @@ const {
   createCategory,
   updateCategory,
   deleteCategory,
-} = require('../../controllers/categoryController');
+} = require('../../controllers/api/categoryController');
 
 // Define routes for category-related API endpoints
 router.get('/', getAllCategories);
@@ -17,6 +20,11 @@ router.get('/:id', getCategoryById);
 router.post('/', createCategory);
 router.put('/:id', updateCategory);
 router.delete('/:id', deleteCategory);
+// router.get('/', withAuth, getAllCategories); 
+// router.get('/:id', withAuth, getCategoryById); 
+// router.post('/', withAuth, createCategory); 
+// router.put('/:id', withAuth, updateCategory); 
+// router.delete('/:id', withAuth, deleteCategory); 
 
 // Export the router for use in other modules
 module.exports = router;

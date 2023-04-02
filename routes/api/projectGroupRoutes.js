@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const groupController = require('../controllers/projectGroupController');
-const withAuth = require('../utils/auth');
+const groupController = require('../../controllers/api/projectGroupController');
+const withAuth = require('../../utils/auth');
 
 // route to create/add a home using async/await
 router.get('/:num/team', groupController.getTeam);

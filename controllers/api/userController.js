@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { User } = require('../../Models');
 
 // Login route
-exports.getLoginPage = ('/login', (req, res) => {
+exports.getLoginPage = ('/user', (req, res) => {
   // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
     res.redirect('/');
@@ -16,7 +16,7 @@ exports.getLoginPage = ('/login', (req, res) => {
 exports.createUser = async (req, res) => {
   try {
     const dbUserData = await User.create({
-      //username: req.body.username,
+      username: req.body.username,
       email: req.body.email,
       password: req.body.password,
     });
