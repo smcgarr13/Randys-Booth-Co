@@ -1,6 +1,6 @@
 const router = require('express').Router();
-const requestController = require('../controllers/requestController');
-const withAuth = require('../utils/auth');
+const requestController = require('../../controllers/requestController');
+const withAuth = require('../../utils/auth');
 
 // route to create/add a home using async/await
 router.get('/:num/requests', requestController.getRequests);

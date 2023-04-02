@@ -5,7 +5,7 @@ const Project = require('./project');
 const ProjectTeam  = require('./project_group');
 const Request = require('./request');
 const RequestList = require('./request_list');
-const Employee = require('./employee')
+const User = require('./user')
 
 
 
@@ -47,5 +47,5 @@ Category.hasMany(Inventory, {
 
 // module.exports = { Inventory, Category,Project,ProjectTeam,Request,RequestList };
 
-module.exports = { Inventory, Category,Project,ProjectTeam,Request,RequestList, Employee };
+module.exports = { Inventory, Category,Project,ProjectTeam,Request,RequestList, User };
 

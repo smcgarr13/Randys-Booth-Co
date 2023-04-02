@@ -1,21 +1,32 @@
 // Import required models
-const { Category, Inventory } = require('../Models');
+const { Category, Inventory } = require('../../Models');
 
 // Define controller function to fetch all categories and their associated inventory items
-const getAllCategories = async (req, res) => {
+exports.getAllCategories = async () => {
   try {
     const categories = await Category.findAll({
       include: [{ model: Inventory }]
     });
-    res.json(categories);
+    return categories;
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    throw err;
   }
 };
+// exports.getAllCategories = async (req, res) => {
+//   try {
+//     const categories = await Category.findAll({
+//       include: [{ model: Inventory }]
+//     });
+//     res.json(categories);
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// };
 
 // Define controller function to fetch a category and its associated inventory items by ID
-const getCategoryById = async (req, res) => {
+exports.getCategoryById = async (req, res) => {
   try {
     const category = await Category.findByPk(req.params.id, {
       include: [{ model: Inventory }]
@@ -34,7 +45,7 @@ const getCategoryById = async (req, res) => {
 };
 
 // Define controller function to create a new category
-const createCategory = async (req, res) => {
+exports.createCategory = async (req, res) => {
   try {
     const { category_name } = req.body;
 
@@ -55,7 +66,7 @@ const createCategory = async (req, res) => {
 };
 
 // Define controller function to update a category by ID
-const updateCategory = async (req, res) => {
+exports.updateCategory = async (req, res) => {
   try {
     const category = await Category.findByPk(req.params.id);
 
@@ -73,7 +84,7 @@ const updateCategory = async (req, res) => {
 };
 
 // Define controller function to delete a category by ID
-const deleteCategory = async (req, res) => {
+exports.deleteCategory = async (req, res) => {
   try {
     const category = await Category.findByPk(req.params.id);
 
@@ -88,13 +99,4 @@ const deleteCategory = async (req, res) => {
     console.log(err);
     res.status(500).json(err);
   }
-};
-
-// Export the controller functions for use in other modules
-module.exports = {
-  getAllCategories,
-  getCategoryById,
-  createCategory,
-  updateCategory,
-  deleteCategory,
 };
