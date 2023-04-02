@@ -4,16 +4,23 @@ const { Op } = require('sequelize');
 
 // Define controller functions for inventory operations
 // GET all inventory items
-exports.getAllInventories = async (req, res) => {
-    try {
-      const inventories = await Inventory.findAll();
-      res.status(200).json(inventories);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
-  };
+exports.getAllInventory = async (req, res) => {
+  try {
+    const inventory = await Inventory.findAll({
+      include: [Category],
+    });
 
+    if (req.headers.accept.includes('application/json')) {
+      res.status(200).json(inventory);
+    } else {
+      res.render('inventory', { inventory });
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
+  }
+};
+  
 // GET one inventory item by ID
 exports.getInventoryById = async (req, res) => {
     try {
@@ -66,19 +73,6 @@ exports.getInventoryById = async (req, res) => {
     }
   };
 
-  // Get all inventory items
-  exports.getAllInventory = async (req, res) => {
-    try {
-      const inventory = await Inventory.findAll({
-        include: [Category],
-      });
-      res.render('inventory', { inventory: inventory });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
-    }
-  };
-
   // Get inventory item for editing
   exports.getInventoryItemForEditing = async (id) => {
     try {
@@ -124,13 +118,32 @@ exports.updateInventory = async (req, res) => {
     if (req.headers.accept.includes('application/json')) {
       res.status(200).json(inventory);
     } else {
-      res.redirect('/inventory');
+      res.redirect(`/inventories/${req.params.id}`);
     }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 };
+
+// exports.updateInventory = async (req, res) => {
+//   try {
+//     const inventory = await Inventory.update(req.body, {
+//       where: {
+//         id: req.params.id,
+//       },
+//     });
+
+//     if (req.headers.accept.includes('application/json')) {
+//       res.status(200).json(inventory);
+//     } else {
+//       res.redirect('/inventory');
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// };
 
 // DELETE an inventory item
 exports.deleteInventory = async (req, res) => {

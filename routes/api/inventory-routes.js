@@ -5,7 +5,7 @@ const withAuth = require('../../utils/auth');
 
 // Import inventory-related controller functions
 const {
-  getAllInventories,
+  getAllInventory,
   getInventoryById,
   getInventoryByCategory,
   getInventoryByCategoryId,
@@ -27,14 +27,14 @@ router.get('/inventory-landing', withAuth, async (req, res) => {
 });
 
 // Routes for inventory-related API endpoints
-router.get('/', getAllInventories);
+router.get('/', getAllInventory);
 router.get('/inventories/:id', getInventoryById);
 router.get('/inventories/category/:id', getInventoryByCategoryId);
 router.get('/category', getInventoryByCategory);
 router.get('/edit/:id', withAuth, getInventoryItemForEditing);
 router.post('/', createInventory);
-router.put('/inventories/:id', updateInventory);
-router.delete('/inventories/:id', deleteInventory);
+router.put('/:id', updateInventory);
+router.delete('/:id', deleteInventory);
 
 // Export the router for use in other modules
 module.exports = router;
