@@ -2,6 +2,56 @@
 
 <div id="inventory-landing-container">
   <div class="inventory-landing-row">
+    {{#each categories}}
+    <div class="inventory-category-container text-center">
+      <h1 id="category-name"><a href="/api/inventories/category?category={{id}}">{{category_name}}</a></h1>
+
+      {{!-- <h1 id="category-name"><a href="/inventories/category?category={{id}}">{{category_name}}</a></h1> --}}
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+{{> footer}}
+
+
+
+
+
+{{!-- {{> header}}
+
+<div id="inventory-landing-container">
+  <div class="inventory-landing-row">
+    {{#each categories}}
+    <div class="inventory-category-container text-center">
+      <h1 id="category-name"><a href="/inventories/category/{{id}}">{{category_name}}</a></h1>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+{{> footer}} --}}
+
+
+{{!-- {{> header}}
+
+<div id="inventory-landing-container">
+  <div class="inventory-landing-row">
+    {{#each categories}}
+    <div class="inventory-category-container text-center">
+      <h1 id="category-name"><a href="/category/{{id}}">{{category_name}}</a></h1>
+    </div>
+    {{/each}}
+  </div>
+</div>
+
+{{> footer}} --}}
+
+
+{{!-- {{> header}}
+
+<div id="inventory-landing-container">
+  <div class="inventory-landing-row">
     
     <div class="inventory-category-container text-center">
       <h1 id="category-name"><a href="/Sheet-Goods/1">Sheet Goods</a></h1>
@@ -21,4 +71,4 @@
   </div>
 </div>
 
-{{> footer}} 
+{{> footer}}  --}}

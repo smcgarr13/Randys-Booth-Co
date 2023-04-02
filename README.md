@@ -31,10 +31,10 @@ Quotes: TBD
 
 Projects: TBD
 
-Inventory: the user can click on each category name an you will be redirected to a page with all of the inventory items that fall under that category name.
+Inventory: the user can click on each category name/card and they will be redirected to a page with all of the inventory items that fall under that category name. The user can add a new inventory item by entering the necessary information in the input fields of the blank card on the page. When the user clicks "add" a new inventory card will populate accordingly.
 
-Future improvements:
-Inventory: we'd like to add an order function to each item so the user can order additional units if needed for their project.
+## Future improvements
+Inventory: we'd like to improve the edit function so it properly saves the edited information. We'd also like to add an order function to each item so the user can order additional units if needed for their project.
 
 Search Function: we'd like to make the search feature @ footer functional so the user can search for projects and inventory items by name or id number.
 

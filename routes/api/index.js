@@ -1,16 +1,18 @@
 // Import required dependencies
 const router = require('express').Router();
+const userRoutes = require('./userRoutes')
 // const categoryRoutes = require('./category-routes');
 // const inventoryRoutes = require('./inventory-routes');
 // const categoryController = require('../../controllers/categoryController');
 // const inventoryController = require('../../controllers/inventoryController');
 // const { createInventory } = require('../../controllers/inventoryController');
 // const withAuth = require('../utils/auth');
-const userRoutes = require('./userRoutes')
+
+// user-related routes
+router.use('/user', userRoutes);
 
 // router.use('/categories', categoryRoutes);
 // router.use('/inventories', inventoryRoutes);
-router.use('/user', userRoutes);
 
 // // Category API routes
 // router.get('/categories', categoryController.getAllCategories);

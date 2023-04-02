@@ -1,4 +1,4 @@
-// Import required dependencies
+// Import required dependencies and controllers
 const router = require('express').Router();
 const inventoryController = require('../controllers/api/inventoryController');
 const withAuth = require('../utils/auth');
@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     res.render('login');
   });
 
-// search route for footer
+// route for searching inventory via footer search bar
 router.get('/search', inventoryController.searchInventory);
 
 // Export the router for use in other modules

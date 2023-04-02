@@ -30,21 +30,23 @@ exports.getInventoryById = async (req, res) => {
 
   // Get inventory items by category
   exports.getInventoryByCategory = async (req, res) => {
-    try {
-      const inventoryItems = await Inventory.findAll({
-        where: {
-          category_id: req.params.id,
-        },
-        include: [Category],
-      });
-  
-      const inventory = inventoryItems.map((item) => item.get({ plain: true }));
-      res.render('inventory', { inventory });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
-    }
-  };
+  try {
+    const category = req.query.category;
+
+    const inventoryItems = await Inventory.findAll({
+      where: {
+        category_id: category,
+      },
+      include: [Category],
+    });
+
+    const inventory = inventoryItems.map((item) => item.get({ plain: true }));
+    res.render('inventory', { inventory });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
+  }
+};
 
   // Get inventory items by category Id
   exports.getInventoryByCategoryId = async (req, res) => {
@@ -78,20 +80,20 @@ exports.getInventoryById = async (req, res) => {
   };
 
   // Get inventory item for editing
-  exports.getInventoryItemForEditing = async (req, res) => {
+  exports.getInventoryItemForEditing = async (id) => {
     try {
-      const inventoryItem = await Inventory.findByPk(req.params.id, {
+      const inventoryItem = await Inventory.findByPk(id, {
         include: [Category],
       });
   
       if (!inventoryItem) {
-        return res.status(404).json({ error: 'Inventory item not found' });
+        throw new Error('Inventory item not found');
       }
   
-      res.render('edit-inventory', { inventory: inventoryItem.get({ plain: true }) });
+      return inventoryItem.get({ plain: true });
     } catch (err) {
       console.error(err);
-      res.status(500).json({ error: 'An error occurred while fetching the inventory item.' });
+      throw err;
     }
   };
 

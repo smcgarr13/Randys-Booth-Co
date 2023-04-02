@@ -1,6 +1,8 @@
-document.getElementById('add-inventory-form').addEventListener('submit', async (e) => {
+  // Add event listener & prevent its default submit behavior
+    document.getElementById('add-inventory-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
+  // Get the form data and convert it to an object
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData);
       console.log(data);
@@ -14,7 +16,8 @@ document.getElementById('add-inventory-form').addEventListener('submit', async (
         body: JSON.stringify(data),
     });
 
-      const json = await response.json();
+  // Extract the item details from the server response
+    const json = await response.json();
 
   // Create a new card and populate it with the item details
     const card = document.createElement('div');
