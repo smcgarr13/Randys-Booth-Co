@@ -7,9 +7,7 @@ const Request = require('./request');
 const RequestList = require('./request_list');
 const User = require('./user')
 
-
-
-// // Define Belongs for Project
+// Define Belongs for Project
 ProjectTeam.belongsTo(Project, {
    foreignKey: 'project_num',
    onDelete: 'CASCADE',
@@ -23,8 +21,7 @@ ProjectTeam.belongsTo(Project, {
    onDelete: 'CASCADE',
  });
 
-
-// // Define hasMany asscociations
+// Define hasMany asscociations
  Project.hasMany(ProjectTeam, {
    foreignKey: 'project_num',
  });
@@ -43,9 +40,6 @@ Category.hasMany(Inventory, {
   foreignKey: 'category_id',
 });
 
-// Export both models as part of a single object for easier import elsewhere
-
-// module.exports = { Inventory, Category,Project,ProjectTeam,Request,RequestList };
-
+// Export models as part of a single object for easier import elsewhere
 module.exports = { Inventory, Category,Project,ProjectTeam,Request,RequestList, User };
 

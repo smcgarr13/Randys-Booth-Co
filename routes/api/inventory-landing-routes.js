@@ -1,8 +1,10 @@
+// Import required dependencies and modules
 const express = require('express');
 const router = express.Router();
 const withAuth = require('../../utils/auth');
 const { getAllCategories, getCategoryById } = require('../../controllers/api/categoryController');
 
+// Route for displaying all categories on the inventory landing page
 router.get('/', withAuth, async (req, res) => {
   try {
     const categories = await getAllCategories();
@@ -27,16 +29,6 @@ router.get('/:id', withAuth, async (req, res) => {
     }
   }
 });
-// router.get('/:id', async (req, res) => {
-//   try {
-//     withAuth(req, res, async () => {
-//       const category = await getCategoryById(req.params.id);
-//       res.render('specific-category', { category, loggedIn: req.session.loggedIn });
-//     });
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
 
+// Export the router for use in other modules
 module.exports = router;

@@ -14,18 +14,6 @@ exports.getAllCategories = async () => {
   }
 };
 
-// exports.getAllCategories = async (req, res) => {
-//   try {
-//     const categories = await Category.findAll({
-//       include: [{ model: Inventory }]
-//     });
-//     res.json(categories);
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// };
-
 // Define controller function to fetch a category and its associated inventory items by ID
 exports.getCategoryById = async (req, res) => {
   try {

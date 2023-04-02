@@ -6,17 +6,14 @@ const exphbs = require('express-handlebars');
 const handlebars = require('handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// Import required route modules
 const routes = require('./routes');
 const userRoutes = require('./routes/api/userRoutes'); 
 const apiRoutes = require('./controllers/api/index.js');
-// const homeRoutes = require('./routes/homeRoutes');
-// const apiRoutes = require('./routes/api');
-// const viewRoutes = require('./routes/viewRoutes'); 
-// const inventoryRoutes = require('./routes/api/inventory-routes');
-// const projectRoutes = require('./routes/projectRoutes'); 
+const viewRoutes = require('./routes/api/viewRoutes'); 
 
+// Import the Sequelize connection configuration
 const sequelize = require('./config/connection');
-
 
 // const helpers = require('./utils/helpers');
 
@@ -66,18 +63,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up application routes
 app.use('/api', apiRoutes);
-// // app.use('/api', inventoryRoutes);
-// app.use('/inventories', inventoryRoutes);
-// app.use(inventoryRoutes);
-// app.use('/', viewRoutes); 
-// app.use('/', homeRoutes);
-// app.use('/projects', projectRoutes); 
+app.use('/', viewRoutes); 
 
 // Set up user routes
-// app.use('/api/users', userRoutes); 
-// Set up application routes
 app.use(routes);
-
 
 // Sync Sequelize models and start the server
 sequelize.sync({ force: false }).then(() => {

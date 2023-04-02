@@ -9,12 +9,11 @@ const categoryRoutes = require('./api/category-routes');
 const inventoryRoutes = require('./api/inventory-routes');
 const projectRoutes = require('./api/projectRoutes');
 
-// Landing page showing all project related to user. 
+// Define routes for the landing page, APIs, and various modules
 router.use('/', homeRoutes);
 router.use('/api', apiRoutes);
 router.use('/inventory-landing', inventoryLandingRoutes);
 router.use('/categories', categoryRoutes);
-// router.use('/inventory-landing', categoryRoutes);
 router.use('/inventories', inventoryRoutes);
 router.use('/projects', projectRoutes);
 
