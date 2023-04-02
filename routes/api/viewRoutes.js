@@ -4,6 +4,9 @@ const { Category, Inventory, Project } = require('../../Models');
 const categoryRoutes = require('./category-routes');
 const inventoryController = require('../../controllers/api/inventoryController');
 const projectController = require('../../controllers/api/projectController');
+const { getInventoryItemForEditing } = require('../../controllers/api/inventoryController');
+
+const withAuth = require('../../utils/auth');
 
 // Define the route to render the login page
 router.get('/login', (req, res) => {
@@ -24,8 +27,8 @@ router.get('/inventory', inventoryController.getAllInventory);
 // Route for fetching inventory items by Id
 router.get('/inventory/:id', inventoryController.getInventoryByCategoryId);
 
-// Route for fetching inventory item for editing
-router.get('/inventory/edit/:id', inventoryController.getInventoryItemForEditing);
+// // Route for fetching inventory item for editing
+// router.get('/inventory/edit/:id', inventoryController.getInventoryItemForEditing);
 
 // Route to render the inventory landing page with fetched categories
 router.get('/inventory-landing', inventoryController.renderInventoryLandingPage);
@@ -36,6 +39,19 @@ router.get('/Hardwood/:id', inventoryController.getInventoryByCategory);
 router.get('/Veneer/:id', inventoryController.getInventoryByCategory);
 router.get('/Foam/:id', inventoryController.getInventoryByCategory);
 
+router.get('/inventory/edit/:id', withAuth, async (req, res) => {
+  try {
+    const inventoryItem = await inventoryController.getInventoryItemForEditing(req, { params: { id: req.params.id } });
+    res.render('edit-inventory', { inventory: inventoryItem });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while fetching the inventory item.' });
+  }
+});
+
+
+// Export the router for use in other modules
+module.exports = router;
 
 
 // // Route for fetching all projects. 
@@ -110,6 +126,3 @@ router.get('/Foam/:id', inventoryController.getInventoryByCategory);
 //     res.status(500).json({ error: 'An error occurred while fetching the categories.' });
 //   }
 // });
-
-// Export the router for use in other modules
-module.exports = router;

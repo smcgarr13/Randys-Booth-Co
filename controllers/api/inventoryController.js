@@ -30,21 +30,40 @@ exports.getInventoryById = async (req, res) => {
 
   // Get inventory items by category
   exports.getInventoryByCategory = async (req, res) => {
-    try {
-      const inventoryItems = await Inventory.findAll({
-        where: {
-          category_id: req.params.id,
-        },
-        include: [Category],
-      });
+  try {
+    const category = req.query.category;
+
+    const inventoryItems = await Inventory.findAll({
+      where: {
+        category_id: category,
+      },
+      include: [Category],
+    });
+
+    const inventory = inventoryItems.map((item) => item.get({ plain: true }));
+    res.render('inventory', { inventory });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
+  }
+};
+
+  // exports.getInventoryByCategory = async (req, res) => {
+  //   try {
+  //     const inventoryItems = await Inventory.findAll({
+  //       where: {
+  //         category_id: req.params.id,
+  //       },
+  //       include: [Category],
+  //     });
   
-      const inventory = inventoryItems.map((item) => item.get({ plain: true }));
-      res.render('inventory', { inventory });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
-    }
-  };
+  //     const inventory = inventoryItems.map((item) => item.get({ plain: true }));
+  //     res.render('inventory', { inventory });
+  //   } catch (err) {
+  //     console.error(err);
+  //     res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
+  //   }
+  // };
 
   // Get inventory items by category Id
   exports.getInventoryByCategoryId = async (req, res) => {

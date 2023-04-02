@@ -8,10 +8,11 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const routes = require('./routes');
 const userRoutes = require('./routes/api/userRoutes'); 
+const apiRoutes = require('./controllers/api/index.js');
 // const homeRoutes = require('./routes/homeRoutes');
 // const apiRoutes = require('./routes/api');
 // const viewRoutes = require('./routes/viewRoutes'); 
-// const inventoryRoutes = require('./routes/inventory-routes');
+// const inventoryRoutes = require('./routes/api/inventory-routes');
 // const projectRoutes = require('./routes/projectRoutes'); 
 
 const sequelize = require('./config/connection');
@@ -64,9 +65,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up application routes
-// app.use('/api', apiRoutes);
+app.use('/api', apiRoutes);
 // // app.use('/api', inventoryRoutes);
 // app.use('/inventories', inventoryRoutes);
+// app.use(inventoryRoutes);
 // app.use('/', viewRoutes); 
 // app.use('/', homeRoutes);
 // app.use('/projects', projectRoutes); 

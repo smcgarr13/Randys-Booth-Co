@@ -13,6 +13,7 @@ exports.getAllCategories = async () => {
     throw err;
   }
 };
+
 // exports.getAllCategories = async (req, res) => {
 //   try {
 //     const categories = await Category.findAll({
