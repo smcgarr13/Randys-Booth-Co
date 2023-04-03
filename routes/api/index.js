@@ -7,7 +7,7 @@ const projectRoutes = require('./projectRoutes');
 const teamRoutes = require('./projectGroupRoutes');
 const requestRoutes = require('./requestRoutes');
 const invlandingRoutes = require('./inventory-landing-routes');
-// user-related routes
+// User-related routes
 router.use('/user', userRoutes);
 router.use('/categories', categoryRoutes);
 router.use('/inventories', inventoryRoutes);
