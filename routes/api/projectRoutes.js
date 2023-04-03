@@ -3,12 +3,12 @@ const projectController = require('../../controllers/api/projectController');
 const withAuth = require('../../utils/auth');
 
 console.log(projectController);
-// route to create/add a home using async/await
+// set routes to interact with project data.
 router.get('/', projectController.getProjects);
-router.get('/projects/:num', withAuth,projectController.getSingleProject);
-router.post('/projects/:num', projectController.createProject);
-router.put('/projects/:num',projectController.updateProject);
-router.delete('/projects/:num', projectController.deleteProject);
+router.get('/:num', withAuth,projectController.getSingleProject);
+router.post('/', projectController.createProject);
+router.put('/:num',projectController.updateProject);
+router.delete('/:num', projectController.deleteProject);
 // router.get('/painting/:id', withAuth, paintingController.getSinglePainting);
 
 module.exports = router;

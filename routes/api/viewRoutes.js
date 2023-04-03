@@ -3,7 +3,7 @@ const router = require('express').Router();
 const { Category, Inventory, Project } = require('../../Models');
 
 // Import the route modules and controllers
-const categoryRoutes = require('./category-routes');
+// const categoryRoutes = require('./category-routes');
 const inventoryController = require('../../controllers/api/inventoryController');
 const projectController = require('../../controllers/api/projectController');
 

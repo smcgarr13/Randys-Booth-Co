@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const {ProjectTeam} = require('../../models');
+const {ProjectTeam} = require('../../Models');
 
 // GET all Employees from Project. 
 exports.getTeam = async (req, res) => {
@@ -7,25 +7,14 @@ exports.getTeam = async (req, res) => {
       // Find requests by the quote num attached. 
       const dbGroupData = await ProjectTeam.findAll({
         where:{
-          project_num: num,
-        },
-        include: [
-          {
-            model: ProjectTeam,
-            attributes: [
-              'employee_name',
-              'employee_email',
-              'employee_role'],
-          },
-        ],
-      });
+          project_num: req.body.project_num,
+        }});
       const groups = dbGroupData.map((group) =>
         groups.get({ plain: true })
       );
   
-      res.render('homepage', {
-        requests,
-        loggedIn: req.session.loggedIn,
+      res.render('ProjectTeam', {
+        groups,
       });
     } catch (err) {
       console.log(err);
@@ -39,22 +28,12 @@ exports.getTeam = async (req, res) => {
     try {
       const dbGroupData = await ProjectTeam.findOne({
         where:{
-          project_num: num,
-          employee_id: id, 
-        },
-        include: [
-          {
-            model: ProjectTeam,
-            attributes: [
-                'employee_name',
-                'employee_email',
-                'employee_role'],
-          },
-        ],
-      });
+          project_num: req.body.project_num,
+          employee_id: req.body.employee_id, 
+        }});
   
       const group = dbGroupData.get({ plain: true });
-      res.render('request', { request, loggedIn: req.session.loggedIn });
+      res.render('ProjectTeam', {group});
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -83,7 +62,8 @@ exports.getTeam = async (req, res) => {
     try {
       const Group = await ProjectTeam.update(req.body, {
         where: {
-          id: req.params.id
+          project_num: req.body.project_num,
+          employee_id: req.body.employee_id, 
         }
       });
       res.status(200).json(Group);
@@ -96,7 +76,7 @@ exports.getTeam = async (req, res) => {
     try {
       const Group = await ProjectTeam.destroy({
         where: {
-          project_num: id
+          project_num: req.body.project_num,
         }
       });
       if (!Group) {

@@ -1,34 +1,18 @@
 const router = require('express').Router();
-const {Request, RequestList } = require('../models');
+const {Request} = require('../../Models');
 
-// GET all Requests from Project. 
+// GET all Requests from Request 
 exports.getRequests = async (req, res) => {
     try {
       // Find requests by the quote num attached. 
       const dbRequestData = await Request.findAll({
         where:{
-          project_num: num,
-        },
-        include: [
-          {
-            model: Request,
-            attributes: [
-              'request_type',
-              'project_num',
-              'order_date',
-              'description'],
-          },
-        ],
-      });
+          project_num: req.params.project_num,
+        }});
   
-      const requests = dbRequestData.map((request) =>
-        request.get({ plain: true })
-      );
+      const requests = dbRequestData.map((request) => request.get({ plain: true }));
   
-      res.render('requests', {
-        requests,
-        loggedIn: req.session.loggedIn,
-      });
+      res.render('Requests', {requests});
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -36,32 +20,17 @@ exports.getRequests = async (req, res) => {
   };
 
 
-  // Get One Request from the Project. 
+  // Get One Request from the Request 
   exports.getSingleRequest = async (req, res) => {
     try {
       const dbSRequestData = await Request.findOne({
         where:{
-          project_num: id,
-          request_num: num, 
-        },
-        include: [
-          {
-            model: Request,
-            attributes: [
-              'request_type',
-              'project_num',
-              'order_date',
-              'description',
-              'request_to',
-              'required_date',
-              'total_cost',
-            ],
-          },
-        ],
-      });
+          project_num: req.params.project_num,
+          request_num: req.params.request_num,
+        }});
   
       const request = dbSRequestData.get({ plain: true });
-      res.render('request', { request, loggedIn: req.session.loggedIn });
+      res.render('Request', { request});
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -73,10 +42,10 @@ exports.getRequests = async (req, res) => {
   exports.createRequest = async (req, res) => {
     try {
       const dbRequestData = await Request.create({
+        project_num: req.body.project_num,
+        request_num: req.body.request_num,
         request_type: req.body.request_type,
         request_date: req.body.request_date,
-        request_num: req.body.request_num,
-        project_num: req.body.project_num,
         request_to: req.body.request_to,
         To_desc: req.body.To_desc,
         total_cost: req.body.total_cost,
@@ -87,12 +56,13 @@ exports.getRequests = async (req, res) => {
       res.status(500).json(err);
     }
   };
-
+// Put request
   exports.updateRequest = async (req, res) => {
     try {
       const request = await Request.update(req.body, {
         where: {
-          id: req.params.id
+          project_num: req.body.project_num,
+          request_num: req.body.request_num,
         }
       });
       res.status(200).json(request);
@@ -101,11 +71,13 @@ exports.getRequests = async (req, res) => {
       res.status(500).json(err);
     }
   };
+  // Delete
   exports.deleteRequest = async (req, res) => {
     try {
       const request = await Request.destroy({
         where: {
-          project_num: id
+          project_num: req.body.project_num,
+          request_num: req.body.request_num,
         }
       });
       if (!request) {

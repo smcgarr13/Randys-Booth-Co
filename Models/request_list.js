@@ -12,10 +12,6 @@ RequestList.init(
     },
     project_num: {
       type: DataTypes.STRING,
-      // references: {
-      //   model: 'quote',
-      //   key: 'quote_num',
-      // },
     },
     qty_num: {
       type: DataTypes.INTEGER,

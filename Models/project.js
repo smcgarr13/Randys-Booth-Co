@@ -7,10 +7,6 @@ Project.init(
   {
     project_num: {
       type: DataTypes.STRING,
-      // references: {
-      //   model: 'quote',
-      //   key: 'quote_num',
-      // },
       primaryKey:true,
       allowNull: false,
     },

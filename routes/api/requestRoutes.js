@@ -1,13 +1,12 @@
 const router = require('express').Router();
-const requestController = require('../../controllers/requestController');
-const withAuth = require('../../utils/auth');
+const requestController = require('../../controllers/api/requestController');
+// const withAuth = require('../../utils/auth');
 
-// route to create/add a home using async/await
-router.get('/:num/requests', requestController.getRequests);
-router.get('/:num/:id', withAuth, requestController.getSingleRequests);
+// set routes to interact with request data. 
+router.get('/:num', requestController.getRequests);
+router.get('/:num/:id', requestController.getSingleRequest);
 router.post('/:num', requestController.createRequest);
-router.put('/num:/:id',requestController.updateRequest);
+router.put('/:num/:id',requestController.updateRequest);
 router.delete('/:num/:id', requestController.deleteRequest);
-// router.get('/painting/:id', withAuth, paintingController.getSinglePainting);
 
 module.exports = router;
