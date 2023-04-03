@@ -2,9 +2,6 @@
 const router = require('express').Router();
 const inventoryController = require('../controllers/api/inventoryController');
 const withAuth = require('../utils/auth');
-const categoryController = require('../controllers/api/categoryController');
-
-// router.get('/', withAuth, categoryController.getAllCategories);
 
 // login route
 router.get('/login', (req, res) => {

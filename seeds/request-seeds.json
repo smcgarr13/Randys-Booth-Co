@@ -1,6 +1,6 @@
 [
     {
-      "project_num": "ABC123",
+      "project_num": "123",
       "request_num":"JOB1233",
       "request_type": "Purchase Order",
       "request_to": "Fake Manufacturing", 
@@ -10,7 +10,7 @@
       "total_cost": 3
     },
     {
-        "project_num": "DEF456",
+        "project_num": "456",
         "request_num":"JOB1234",
         "request_type": "Purchase Order",
         "request_to": "False Manufacturing", 
@@ -20,7 +20,7 @@
         "total_cost": 5
       },
       {
-        "project_num": "ABC123",
+        "project_num": "123",
         "request_num":"JOB1235",
         "request_type": "Drawing Request",
         "request_to": "Bob Ross", 
@@ -30,7 +30,7 @@
         "total_cost": 2
       },
       {
-        "project_num": "ABC123",
+        "project_num": "123",
         "request_num":"JOB1236",
         "request_type": "Delivery Receipt",
         "request_to": "Ice Road Truckers", 

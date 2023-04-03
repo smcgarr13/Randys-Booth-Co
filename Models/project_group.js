@@ -14,10 +14,7 @@ ProjectTeam.init(
     project_num: {
       type: DataTypes.STRING,
       allowNull: false,
-      // references: {
-      //   model: 'quote',
-      //   key: 'quote_num',
-      // },
+
     },
     employee_name:{
       type: DataTypes.STRING,

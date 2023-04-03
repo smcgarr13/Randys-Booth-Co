@@ -16,19 +16,14 @@ Request .init(
 
     },
     request_num: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey:true,
-      // autoIncrement: true,
 
     },
     project_num: {
         type: DataTypes.STRING,
         allowNull: false,
-        // references: {
-        //   model: 'quote',
-        //   key: 'quote_num',
-        // },
       },
     request_to:{
         type: DataTypes.STRING,
@@ -57,9 +52,7 @@ Request .init(
     total_cost:{
       type: DataTypes.INTEGER,
       allowNull: false,
-    }
-      // type: DataTypes.ARRAY(DataTypes.STRING)
-      // type: DataTypes.ARRAY(DataTypes.STRING)
+    },
     },
   {
     sequelize,

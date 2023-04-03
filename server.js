@@ -8,14 +8,15 @@ const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 // Import required route modules
 const routes = require('./routes');
-const userRoutes = require('./routes/api/userRoutes'); 
-const apiRoutes = require('./controllers/api/index.js');
-const viewRoutes = require('./routes/api/viewRoutes'); 
-
 // Import the Sequelize connection configuration
 const sequelize = require('./config/connection');
+const helpers = require('./utils/helpers');
 
-// const helpers = require('./utils/helpers');
+const apiRoutes = require('./controllers/api/index.js');
+// const viewRoutes = require('./routes/api/viewRoutes'); 
+
+
+
 
 // Initialize Express app
 const app = express();
@@ -62,8 +63,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Set up application routes
-app.use('/api', apiRoutes);
-app.use('/', viewRoutes); 
+// app.use('/api', apiRoutes);
+// app.use('/', viewRoutes); 
 
 // Set up user routes
 app.use(routes);
