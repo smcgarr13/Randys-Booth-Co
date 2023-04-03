@@ -29,7 +29,7 @@ Employees/emails: TBD
 
 Quotes: TBD
 
-Projects: TBD
+Projects: User can click on the link in the nav bar to be redirected to a page with all the available projects. Each project will show some basic information to help differentiate between each other. 
 
 Inventory: the user can click on each category name/card and they will be redirected to a page with all of the inventory items that fall under that category name. The user can add a new inventory item by entering the necessary information in the input fields of the blank card on the page. When the user clicks "add" a new inventory card will populate accordingly.
 
@@ -64,7 +64,7 @@ N/A
 
 ## Questions
 
-You can find us on GitHub at [smcgarr13](https://github.com/smcgarr13), Shaun, Teni, Luis
+You can find us on GitHub at [smcgarr13](https://github.com/smcgarr13), Shaun, Teni, [lag2993](https://github.com/lag2993)
 
 Please email us directly if you have any additional questions.
 
