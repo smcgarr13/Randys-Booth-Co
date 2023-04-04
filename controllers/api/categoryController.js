@@ -1,5 +1,5 @@
 // Import required models
-const { Category, Inventory } = require('../../Models');
+const { Category, Inventory } = require('../../models');
 
 // Define controller function to fetch all categories and their associated inventory items
 exports.getAllCategories = async () => {

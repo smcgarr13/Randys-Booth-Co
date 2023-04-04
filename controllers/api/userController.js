@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User } = require('../../Models');
+const { User } = require('../../models');
 
 // Login route
 exports.getLoginPage = ('/user', (req, res) => {

@@ -1,6 +1,6 @@
 // Import required dependencies and models
 const router = require('express').Router();
-const { Category, Inventory, Project } = require('../../Models');
+const { Category, Inventory, Project } = require('../../models');
 
 // Import the route modules and controllers
 // const categoryRoutes = require('./category-routes');
