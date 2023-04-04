@@ -1,5 +1,5 @@
 // Import required dependencies and models
-const { Category, Inventory } = require('../../Models');
+const { Category, Inventory } = require('../../models');
 const { Op } = require('sequelize');
 
 // Define controller functions for inventory operations

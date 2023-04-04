@@ -5,7 +5,7 @@ const categoryData = require('./category-seeds.json');
 const projectData = require('./project-seeds.json');
 const projectTeamData = require('./group-seeds.json');
 const requestData = require('./request-seeds.json');
-const { Category, Inventory,Project,ProjectTeam,Request,Employee} = require('../Models');
+const { Category, Inventory,Project,ProjectTeam,Request,Employee} = require('../models');
 
 // Define the function to seed the database with sample data
 const seedDatabase = async () => {
