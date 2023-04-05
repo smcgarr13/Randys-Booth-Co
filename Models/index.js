@@ -1,4 +1,5 @@
 // Import the Inventory and Category models
+
 const Inventory = require('./inventory-model');
 const Category = require('./category-model');
 const Project = require('./project');
