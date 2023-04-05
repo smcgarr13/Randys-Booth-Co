@@ -1,7 +1,7 @@
 [
     {
       "project_num": "123",
-      "request_num":"JOB1233",
+      "request_num":"1233",
       "request_type": "Purchase Order",
       "request_to": "Fake Manufacturing", 
       "request_date": "2022-01-17",
@@ -11,7 +11,7 @@
     },
     {
         "project_num": "456",
-        "request_num":"JOB1234",
+        "request_num":"1234",
         "request_type": "Purchase Order",
         "request_to": "False Manufacturing", 
         "request_date": "2023-01-17",
@@ -21,7 +21,7 @@
       },
       {
         "project_num": "123",
-        "request_num":"JOB1235",
+        "request_num":"1235",
         "request_type": "Drawing Request",
         "request_to": "Bob Ross", 
         "request_date": "2022-01-29",
@@ -31,7 +31,7 @@
       },
       {
         "project_num": "789",
-        "request_num":"JOB1236",
+        "request_num":"1236",
         "request_type": "Delivery Receipt",
         "request_to": "Ice Road Truckers", 
         "request_date": "2022-03-28",
