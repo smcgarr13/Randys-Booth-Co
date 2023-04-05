@@ -22,7 +22,7 @@ Request .init(
 
     },
     project_num: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     request_to:{

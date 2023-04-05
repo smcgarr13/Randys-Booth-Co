@@ -6,7 +6,7 @@ class Project extends Model {}
 Project.init(
   {
     project_num: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       primaryKey:true,
       allowNull: false,
     },

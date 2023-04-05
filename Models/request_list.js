@@ -11,7 +11,7 @@ RequestList.init(
       primaryKey:true,
     },
     project_num: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     qty_num: {
       type: DataTypes.INTEGER,
