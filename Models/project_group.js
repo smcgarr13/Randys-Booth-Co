@@ -12,7 +12,7 @@ ProjectTeam.init(
         primaryKey: true,
     },
     project_num: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
       allowNull: false,
 
     },

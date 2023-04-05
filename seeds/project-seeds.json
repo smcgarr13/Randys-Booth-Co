@@ -1,6 +1,6 @@
 [
     {
-      "project_num": "ABC123",
+      "project_num": "123",
       "Project_name": "Plywood",
       "buyer_name": "John",
       "buyer_email": "john@fake.com", 
@@ -9,7 +9,7 @@
       "complete": false
     },
     {
-        "project_num": "DEF456",
+        "project_num": "456",
         "Project_name": "Cedar",
         "buyer_name": "Bill",
         "buyer_email": "bill@fake.com", 
@@ -18,7 +18,7 @@
         "complete": false
       },
       {
-        "project_num": "HIJ789",
+        "project_num": "789",
         "Project_name": "Oak",
         "buyer_name": "Sarah",
         "buyer_email": "sarah@fake.com", 
@@ -27,7 +27,7 @@
         "complete": false
       },
       {
-        "project_num": "KLM123",
+        "project_num": "124",
         "Project_name": "Pine",
         "buyer_name": "Meghan",
         "buyer_email": "meg@fake.com", 
