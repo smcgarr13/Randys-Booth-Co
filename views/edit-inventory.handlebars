@@ -1,6 +1,6 @@
 {{> header}}
 
-    <form id="edit-inventory-form" data-inventory-id="{{inventory.id}}">
+<form id="edit-inventory-form" data-inventory-id="{{inventory.id}}">
       <div class="card edit-card">
       <div class="form-group">
     <div method="put" action="/api/inventories/{{inventory.id}}">
@@ -41,5 +41,7 @@
 </div>
   </div>
 </form>
+
+<script src="/js/edit-inventory.js"></script>
 
 {{> footer}}
