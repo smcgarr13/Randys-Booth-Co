@@ -58,7 +58,7 @@ MySQL|MySQL2;
 Sequelize;
 BCrypt; 
 Heroku;
-At least one new library, package, or technology that we haven't discussed.
+Nodemailer
 
 
 ## License
