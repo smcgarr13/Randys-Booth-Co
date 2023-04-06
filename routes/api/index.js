@@ -11,10 +11,10 @@ const invlandingRoutes = require('./inventory-landing-routes');
 router.use('/user', userRoutes);
 router.use('/categories', categoryRoutes);
 router.use('/inventories', inventoryRoutes);
-router.use('/projects',projectRoutes);
-router.use('/team',teamRoutes);
-router.use('/request',requestRoutes);
-router.use('/inventories/landing',invlandingRoutes);
+router.use('/projects', projectRoutes);
+router.use('/team', teamRoutes);
+router.use('/request', requestRoutes);
+router.use('/inventory-landing', invlandingRoutes);
 
 // Export the router for use in other modules
 module.exports = router;

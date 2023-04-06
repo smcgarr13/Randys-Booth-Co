@@ -4,15 +4,45 @@ const { Op } = require('sequelize');
 
 // Define controller functions for inventory operations
 // GET all inventory items
-exports.getAllInventories = async (req, res) => {
-    try {
-      const inventories = await Inventory.findAll();
-      res.status(200).json(inventories);
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+// exports.getAllInventories = async (req, res) => {
+//     try {
+//       const inventories = await Inventory.findAll();
+//       res.status(200).json(inventories);
+//     } catch (err) {
+//       console.log(err);
+//       res.status(500).json(err);
+//     }
+//   };
+
+exports.getAllInventory = async (req, res) => {
+  try {
+    const inventory = await Inventory.findAll({
+      include: [Category],
+    });
+    if (req.headers.accept.includes('application/json')) {
+      res.status(200).json(inventory);
+    } else {
+      res.render('inventory', { inventory });
     }
-  };
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
+  }
+};
+
+
+  // // Get all inventory items
+  // exports.getAllInventory = async (req, res) => {
+  //   try {
+  //     const inventory = await Inventory.findAll({
+  //       include: [Category],
+  //     });
+  //     res.render('inventory', { inventory: inventory });
+  //   } catch (err) {
+  //     console.error(err);
+  //     res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
+  //   }
+  // };
 
 // GET one inventory item by ID
 exports.getInventoryById = async (req, res) => {
@@ -66,19 +96,6 @@ exports.getInventoryById = async (req, res) => {
     }
   };
 
-  // Get all inventory items
-  exports.getAllInventory = async (req, res) => {
-    try {
-      const inventory = await Inventory.findAll({
-        include: [Category],
-      });
-      res.render('inventory', { inventory: inventory });
-    } catch (err) {
-      console.error(err);
-      res.status(500).json({ error: 'An error occurred while fetching the inventory data.' });
-    }
-  };
-
   // Get inventory item for editing
   exports.getInventoryItemForEditing = async (id) => {
     try {
@@ -89,7 +106,6 @@ exports.getInventoryById = async (req, res) => {
       if (!inventoryItem) {
         throw new Error('Inventory item not found');
       }
-  
       return inventoryItem.get({ plain: true });
     } catch (err) {
       console.error(err);
@@ -104,7 +120,8 @@ exports.createInventory = async (req, res) => {
     if (req.headers.accept.includes('application/json')) {
       res.status(200).json(inventory);
     } else {
-      res.redirect('/inventory');
+      // res.redirect('/inventory');
+      res.redirect(`/inventories/${req.params.id}`);
     }
   } catch (err) {
     console.log(err);
@@ -113,24 +130,66 @@ exports.createInventory = async (req, res) => {
 };
 
 // PUT an update to an inventory item
+// exports.updateInventory = async (req, res) => {
+//   try {
+//     const inventory = await Inventory.update(req.body, {
+//       where: {
+//         id: req.params.id,
+//       },
+//     });
+
+//     if (req.headers.accept.includes('application/json')) {
+//       res.status(200).json(inventory);
+//     } else {
+//       res.redirect('/inventory');
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// };
+// exports.updateInventory = async (req, res) => {
+//   try {
+//     console.log('Update inventory request:', req.body); // Add this line
+//     const inventory = await Inventory.update(req.body, {
+//       where: {
+//         id: req.params.id,
+//       },
+//     });
+//     console.log('Updated inventory:', inventory); // Add this line
+
+//     if (req.headers.accept.includes('application/json')) {
+//       res.status(200).json(inventory);
+//     } else {
+//       res.redirect('/inventories');
+//     }
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// };
+
+// PUT an update to an inventory item
 exports.updateInventory = async (req, res) => {
   try {
-    const inventory = await Inventory.update(req.body, {
+    const [rowsUpdated, updatedInventories] = await Inventory.update(req.body, {
       where: {
         id: req.params.id,
       },
+      returning: true, // This will return the updated inventory item
     });
 
     if (req.headers.accept.includes('application/json')) {
-      res.status(200).json(inventory);
+      res.status(200).json(updatedInventories[0]);
     } else {
-      res.redirect('/inventory');
+      res.redirect('/inventories');
     }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 };
+
 
 // DELETE an inventory item
 exports.deleteInventory = async (req, res) => {

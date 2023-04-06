@@ -10,9 +10,11 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
-      if (response.ok) {
-        document.location.replace('/');
+  // After successful login
+    if (response.ok) {
+    document.location.replace('/inventory-landing');
+      // if (response.ok) {
+      //   document.location.replace('/');
       } else {
         alert('Failed to log in.');
       }
@@ -32,30 +34,32 @@ const loginFormHandler = async (event) => {
         body: JSON.stringify({ email, password }),
         headers: { 'Content-Type': 'application/json' },
       });
-  
-      if (response.ok) {
-        document.location.replace('/');
+  // After successful signup
+    if (response.ok) {
+    document.location.replace('/inventory-landing');
+      // if (response.ok) {
+      //   document.location.replace('/');
       } else {
         alert('Failed to sign up.');
       }
     }
   };
   
-  document
-    .querySelector('.login-form')
-    .addEventListener('submit', loginFormHandler);
+  // document
+  //   .querySelector('.login-form')
+  //   .addEventListener('submit', loginFormHandler);
   
-  document
-    .querySelector('.signup-form')
-    .addEventListener('submit', signupFormHandler);
+  // document
+  //   .querySelector('.signup-form')
+  //   .addEventListener('submit', signupFormHandler);
   
 
-    // document.addEventListener('DOMContentLoaded', () => {
-    //   document
-    //     .querySelector('.login-form')
-    //     .addEventListener('submit', loginFormHandler);
+    document.addEventListener('DOMContentLoaded', () => {
+      document
+        .querySelector('.login-form')
+        .addEventListener('submit', loginFormHandler);
     
-    //   document
-    //     .querySelector('.signup-form')
-    //     .addEventListener('submit', signupFormHandler);
-    // });
+      document
+        .querySelector('.signup-form')
+        .addEventListener('submit', signupFormHandler);
+    });
