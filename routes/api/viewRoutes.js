@@ -23,6 +23,11 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// rendering login as temporary home page
+router.get('/', (req, res) => {
+  res.render('login');
+});
+
 // Routes for project and inventory-related API endpoints
 router.get('/projects', projectController.getProjects);
 router.get('/inventory', inventoryController.getAllInventory);
