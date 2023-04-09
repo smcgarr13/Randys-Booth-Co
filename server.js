@@ -12,10 +12,10 @@ const routes = require('./routes');
 const sequelize = require('./config/connection');
 const helpers = require('./utils/helpers');
 
-const apiRoutes = require('./controllers/api/index.js');
-const viewRoutes = require('./routes/api/viewRoutes'); 
+// const apiRoutes = require('./controllers/api/index.js');
+// const viewRoutes = require('./routes/api/viewRoutes'); 
 
-const inventoryLandingRoutes = require('./routes/api/inventory-landing-routes');
+// const inventoryLandingRoutes = require('./routes/api/inventory-landing-routes');
 
 // Initialize Express app
 const app = express();
@@ -61,10 +61,10 @@ app.use(express.urlencoded({ extended: true }));
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Set up application routes
-app.use('/api', apiRoutes);
-app.use('/', viewRoutes); 
-app.use('/inventory-landing', inventoryLandingRoutes);
+// // Set up application routes
+// app.use('/api', apiRoutes);
+// app.use('/', viewRoutes); 
+// app.use('/inventory-landing', inventoryLandingRoutes);
 
 
 // Set up user routes
